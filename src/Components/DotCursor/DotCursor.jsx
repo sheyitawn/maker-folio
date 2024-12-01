@@ -20,8 +20,8 @@ const DotCursor = () => {
     <div
       className="dot-cursor"
       style={{
-        top: `${position.y}px`,
-        left: `${position.x}px`,
+        top: `${position.y-23}px`,
+        left: `${position.x -23}px`,
       }}
     />
   );

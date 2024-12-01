@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./sketch.css";
+import Model from "../Model/Model";
 import { ReactComponent as MyGraphic } from "./one.svg";
 
-const Sketch = ({ title, description, customContent }) => {
+const Sketch = ({ title, description, model, customContent }) => {
 
   const [isModalOpen, setModalOpen] = useState(false);
 
@@ -26,6 +27,11 @@ const Sketch = ({ title, description, customContent }) => {
               ✕
             </button>
             <h1>{title}</h1>
+              <div>
+                <Model
+                  modelUrl={model}
+                />
+              </div>
             <p>{description}</p>
             {customContent && <div className="custom-content">{customContent}</div>}
           </div>

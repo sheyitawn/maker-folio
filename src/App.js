@@ -1,10 +1,9 @@
 import React from "react";
 import DotCursor from "./Components/DotCursor/DotCursor";
-import Model from "./Components/Model/Model";
 import "./App.css";
-// import "./Components/Sketch/sketch.css";
 
 import Sketch from "./Components/Sketch/Sketch";
+import Project1 from "./Portfolio/Project1";
 
 const App = () => {
   // const models = [
@@ -27,20 +26,23 @@ const App = () => {
       <div className="content_graph-paper"></div>
 
       <div className="content_sketch-container">
-        
+
         <Sketch
           title="Gadget • Gesture Controlled Finger-tip"
           description="This is a detailed description of Sketch 1."
-          customContent={<div>Custom content for Sketch 1</div>}
+          model={"/test01.glb"}
+          customContent={<Project1 />}
         />
         <Sketch
           title="Gadget • REVU, in-person reviews"
           description="This is a detailed description of Sketch 2."
+          model={"/holo corn.glb"}
           customContent={<img src="example.jpg" alt="Example" />}
         />
         <Sketch
           title="Prop • Adventure Time Voice Box"
           description="This is a detailed description of Sketch 2."
+          model={"/holo corn.glb"}
           customContent={<img src="example.jpg" alt="Example" />}
         />
 

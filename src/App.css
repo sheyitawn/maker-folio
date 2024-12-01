@@ -93,10 +93,10 @@ body {
 
 .content_box::before {
   content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  position: fixed;
+  /* top: 0; */
+  left: 1.5rem;
+  right: 1.5rem;
   height: 8px; /* Height of the ruler area */
   background-image: repeating-linear-gradient(
     to right,
@@ -111,10 +111,9 @@ body {
 
 .content_box::after {
   content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
+  position: fixed;
+  top: 3.1rem;
+  bottom: 3.1rem; 
   width: 8px; /* Width of the ruler area */
   background-image: repeating-linear-gradient(
     to bottom,
