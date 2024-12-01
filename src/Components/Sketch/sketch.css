@@ -1,0 +1,173 @@
+.content_sketch-container {
+  display: flex;
+  flex-direction: column; /* Arrange items vertically */
+  gap: 24px; /* Space between sketches */
+  align-items: center; /* Default center alignment */
+  /* filter: none; */
+
+}
+
+.sketch {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 50px;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 2px;
+  width: 40vw;
+  height: 40vh;
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+  filter: none; 
+}
+
+/* Left alignment for odd sketches */
+.content_sketch-container .sketch:nth-child(odd) {
+  align-self: flex-start; /* Align to the left */
+}
+
+/* Right alignment for even sketches */
+.content_sketch-container .sketch:nth-child(even) {
+  align-self: flex-end; /* Align to the right */
+}
+
+
+
+/* Hover effect: Blur all other sketches except the hovered one */
+.content_sketch-container:hover .sketch {
+  filter: blur(5px);}
+
+.content_sketch-container .sketch:hover {
+  filter: none; /* Keep the hovered sketch clear */
+  z-index: 1; /* Bring the hovered sketch to the foreground if needed */
+}
+.sketch_title {
+  font-size: 1em;
+  font-family: 'Courier', monospace;
+  position: relative;
+}
+
+/* Pseudo-elements for glitch effect */
+.sketch_title::before,
+.sketch_title::after {
+  content: attr(data-title); /* Dynamically get text from data-title */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.sketch_title::before {
+  color: rgb(75, 69, 120); /* Cyan glitch layer */
+  z-index: -1;
+  transform: translate(0, 0);
+}
+
+.sketch_title::after {
+  color: rgb(213, 197, 213); /* Magenta glitch layer */
+  z-index: -2;
+  transform: translate(0, 0);
+}
+
+/* Hover Effect on .sketch to trigger glitch on sketch_title */
+.sketch:hover .sketch_title::before {
+  animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both 100;
+}
+
+.sketch:hover .sketch_title::after {
+  animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both 100;
+}
+
+/* Keyframes for glitch effect */
+@keyframes glitch {
+  0% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* Optional: Styling for the SVG */
+.svg-icon {
+  width: 100%;
+  /* height: 100px; */
+  fill: #fff;
+}
+
+
+/* Modal backdrop styling */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.89); /* Semi-transparent backdrop */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-image: 
+  linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+  linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px); */
+  z-index: 9999; /* Ensure it appears above everything */
+  /* cursor:default; */
+
+}
+
+/* Modal content styling */
+.modal-content {
+  background: #13173A;
+  border-radius: 5px;
+  padding: 20px;
+  /* max-width: 600px; */
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  position: relative;
+
+  border: 2px solid white;
+  width: 100%;
+  height: 86vh;
+  overflow-y: scroll;
+
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 12px 12px; /* Grid cell size */
+}
+
+/* Close button styling */
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #fff;
+  /* cursor: pointer; */
+}
+
+/* Custom content styling */
+.custom-content {
+  margin-top: 20px;
+}

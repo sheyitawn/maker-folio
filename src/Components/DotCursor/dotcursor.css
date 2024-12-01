@@ -1,0 +1,11 @@
+.dot-cursor {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5px; /* Adjust the size of the dot */
+    height: 5px;
+    background-color: white; /* Color of the dot */
+    pointer-events: none; /* Ensures the cursor doesn't interfere with other elements */
+    z-index: 99999; /* Makes sure it appears on top */
+  }
