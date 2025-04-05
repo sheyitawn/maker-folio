@@ -154,24 +154,26 @@ body {
  */
 
  .content_footnote {
-  font-size: .4em;
+  font-size: .9em;
   position: absolute;
   right: 0.8rem;
   bottom: 0.8rem;
-  border: 2px rgba(255, 255, 255, 0.6) solid;
+  border: 3px rgba(255, 255, 255, 0.895) solid;
   background-color: #13173A;
-  width: 10rem;
-  height: 6rem;
+  width: 14rem;
+  height: 8rem;
   display: grid;
   grid-template-rows: auto auto auto; /* Three rows with automatic heights */
   gap: 10px; /* Space between rows and columns */
   z-index: 999;
+  padding: .7rem;
+  font-family: 'Courier New', monospace;
 }
 
 /* For screens between 768px and 1023px (e.g., tablets) */
 @media (max-width: 768px){
   .content_footnote {
-    width: 13rem;
+    width: 15rem;
     height: 8rem;
     right: 1rem;
     bottom: 1rem;
