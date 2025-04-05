@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./sketch.css";
 import Model from "../Model/Model";
-import { ReactComponent as MyGraphic } from "./one.svg";
+// import { ReactComponent as MyGraphic } from "./one.svg";
+// import testImage from "./test.png";
 
-const Sketch = ({ title, description, model, customContent }) => {
+const Sketch = ({ title, description, sketch, model, customContent }) => {
 
   const [isModalOpen, setModalOpen] = useState(false);
 
@@ -14,7 +15,9 @@ const Sketch = ({ title, description, model, customContent }) => {
 
     <>
       <div className="sketch" onClick={openModal}>
-        <MyGraphic className="svg-icon" />
+        {/* <MyGraphic1 className="svg-icon" /> */}
+        <img src={sketch} alt="Preview" className="image-icon" />
+        
         <div className="sketch_title" data-title={title}>
           {title}
         </div>
