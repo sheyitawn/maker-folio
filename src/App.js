@@ -34,24 +34,13 @@ const App = () => {
       </div>
 
       <div className="content_footnote">
-        <div className="content_footnote_header">title</div>
-        <div className="content_footnote_center">links</div>
-        <div className="content_footnote_footer">footer</div>
+        <div className="content_footnote_header">built: 2020 – 2025</div>
+        <div className="content_footnote_center">// DEV NOTES</div>
+        <div className="content_footnote_footer">links</div>
     
       </div>
 
     </div>
-
-
-    // <>
-    // {models.map((model, index) => (
-    //       <Model
-    //         key={index}
-    //         modelUrl={model.url}
-    //         description={model.name}
-    //       />
-    //     ))}
-    // </>
   );
 };
 
