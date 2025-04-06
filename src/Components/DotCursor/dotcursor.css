@@ -9,3 +9,25 @@
     pointer-events: none; /* Ensures the cursor doesn't interfere with other elements */
     z-index: 99999; /* Makes sure it appears on top */
   }
+
+  /* .dot-cursor {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: white;
+    pointer-events: none;
+    z-index: 99999;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    transform: translate(-50%, -50%);
+  } */
+  
+  /* When hovering */
+  .dot-cursor--active {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: white;
+    mix-blend-mode: difference; /* Optional effect */
+  }
+  
