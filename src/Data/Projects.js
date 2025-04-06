@@ -27,7 +27,7 @@ const projects = [
     customContent: <Project2 />
   },
   {
-    title: "Gadjet • Chaotic Twister",
+    title: "Gadget • Chaotic Twister",
     description: "This is a detailed description of Sketch 3.",
     model: "/holo corn.glb",
     sketch: sketch3,
