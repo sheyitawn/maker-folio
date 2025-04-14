@@ -12,9 +12,12 @@ const Project1 = () => {
         <h1>Gesture Controlled Finger-tip</h1>
 
         <p>
-            Lorem ipsum dolor sit amet. Id reiciendis consequatur et veritatis repudiandae qui omnis velit. Id aperiam nulla et cumque modi et dignissimos quas sit fuga dolor et excepturi rerum ea quod placeat non quidem quasi.
-            
-            In aperiam deleniti nam laborum tempore sed illum adipisci est culpa doloribus et placeat odit hic odio voluptas! Et corrupti excepturi 33 modi minus sed vero incidunt et distinctio dicta ad sunt magnam. Eos eligendi nihil est reprehenderit tempora non aliquid enim est fugiat quibusdam et ullam amet ab minima explicabo nam minima animi?
+        [ PROJECT LOG #032 ]
+        Name: Gesture-Controlled Finger-tip
+        Function: Converts hand movements to digital commands.
+        Tech: Arduino, Fusion 360, React Three Fiber
+        Notes: V2 coming soon — need to test grip with gloves.
+
         </p>
         <div className="new_div">
             hello this is placeholder text
