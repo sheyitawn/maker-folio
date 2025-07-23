@@ -13,42 +13,42 @@ import Project3 from '../Portfolio/Project3.jsx';
 
 const projects = [
   {
-    title: "Gadget • Flame Punching Fist",
+    title: "GADGET • Flame Punching Fist",
     description: "This is a detailed description of Sketch 1.",
     model: "/test01.glb",
     sketch: sketch1,
     customContent: <Project1 />
   },
   {
-    title: "Prop • Adventure Time Voice Box",
+    title: "PROP • Adventure Time Voice Box",
     description: "This is a detailed description of Sketch 2.",
     model: "/holo corn.glb",
     sketch: sketch2,
     customContent: <Project2 />
   },
   {
-    title: "Gadget • Chaotic Twister",
+    title: "GADGET • Chaotic Twister",
     description: "This is a detailed description of Sketch 3.",
     model: "/holo corn.glb",
     sketch: sketch3,
     customContent: <Project3 />
   },
   {
-    title: "Prop • Magic Glowing Potion",
+    title: "PROP • Magic Glowing Potion",
     description: "This is a detailed description of Sketch 3.",
     model: "/holo corn.glb",
     sketch: sketch4,
     customContent: <Project3 />
   },
   {
-    title: "Gadget • Gesture Drone Controller",
+    title: "GADGET • Gesture Drone Controller",
     description: "This is a detailed description of Sketch 3.",
     model: "/holo corn.glb",
     sketch: sketch5,
     customContent: <Project3 />
   },
   {
-    title: "Gadget • NFC Ring",
+    title: "GADGET • NFC Ring",
     description: "This is a detailed description of Sketch 3.",
     model: "/holo corn.glb",
     sketch: sketch6,
