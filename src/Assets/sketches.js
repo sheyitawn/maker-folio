@@ -1,6 +1,6 @@
 
-import sketch1 from './test.png';
-import sketch2 from './test1.png';
+import sketch1 from './Project1.png';
+import sketch2 from './Project2.png';
 import sketch3 from './test2.png';
 import sketch4 from './test3.png';
 import sketch5 from './test4.png';
