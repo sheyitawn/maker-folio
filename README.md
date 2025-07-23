@@ -11,7 +11,7 @@ This site showcases all my physical projects with detailed descriptions of how t
 git clone https://github.com/yourname/maker-folio.git
 cd maker-folio
 npm install
-npm run dev
+npm start
 ```
 
 ## Lisence
