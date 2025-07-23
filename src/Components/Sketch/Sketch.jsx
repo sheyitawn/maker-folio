@@ -27,6 +27,7 @@ const Sketch = ({ title, description, sketch, model, customContent, onLog }) => 
           <div className="side-line right" />
         </div>
         <img src={sketch} alt="Preview" className="image-icon" />
+        <img className="sketch-mini" src={sketch} alt="Preview"/>
         <div className="sketch_title" data-title={title}>
           {title}
         </div>
