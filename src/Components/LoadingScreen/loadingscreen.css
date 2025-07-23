@@ -63,7 +63,7 @@
     transparent 1px,
     transparent 4px
   );
-  /* animation: flicker 0.15s infinite; */
+  animation: flicker 0.15s infinite;
   z-index: 1;
 }
 
