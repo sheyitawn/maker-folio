@@ -1,0 +1,56 @@
+{
+  "flame_punching_fist": {
+    "title": "Flame Punching Fist",
+    "type": "GADGET",
+    "coverImg": "Project1.png or cover.png",
+    "model3D": null,
+    "tags": [
+      "gadget",
+      "hardware"
+    ],
+    "description": "A fist that shoots flames when you punch",
+    "logs": [
+      {
+        "date": null,
+        "imgs": [
+          "cover.png"
+        ],
+        "tags": [
+          "hardware",
+          "live",
+          "new"
+        ],
+        "content": "another log!",
+        "filename": "log-2025-24-06.md"
+      },
+      {
+        "date": null,
+        "imgs": [
+          "cover.png"
+        ],
+        "tags": [
+          "hardware",
+          "live"
+        ],
+        "content": "test log! smile if you see this!",
+        "filename": "log-2025-24-07.md"
+      }
+    ]
+  },
+  "project_template": {
+    "title": null,
+    "coverImg": null,
+    "model3D": null,
+    "tags": null,
+    "description": null,
+    "logs": [
+      {
+        "date": null,
+        "imgs": null,
+        "tags": null,
+        "content": "",
+        "filename": "log-yyyy-mm-dd.md"
+      }
+    ]
+  }
+}
