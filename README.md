@@ -8,9 +8,10 @@ This site showcases all my physical projects with detailed descriptions of how t
 ## Getting Started
 
 ```bash
-git clone https://github.com/yourname/maker-folio.git
+git clone https://github.com/sheyitawn/maker-folio.git
 cd maker-folio
 npm install
+npm run update-projects
 npm start
 ```
 
