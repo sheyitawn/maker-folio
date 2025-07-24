@@ -1,0 +1,58 @@
+html {
+    cursor: none;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #13173A;
+    background-image: radial-gradient(
+      circle at center,
+      rgba(19, 23, 58, 0) 50%,
+      rgba(0, 0, 0, 0.4) 100%
+    );
+    color: white;
+    overflow-y: hidden;
+    cursor: none;
+  }
+  
+  
+  ::-moz-selection { /* Code for Firefox */
+    color: #13173A;
+    background: white;
+  }
+  
+  ::selection {
+    color: #13173A;
+    background: white;
+  }
+  
+  /* 
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+  } */
+  
+  ::-webkit-scrollbar {
+    width: .3rem;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #13173A; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #11142b; 
+    border-radius: .2rem;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #23284f; 
+  
+  }
