@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import "./sketch.css";
 import Model from "../Model/Model";
+import Logs from "../Logs/Logs";
 // import { ReactComponent as MyGraphic } from "./one.svg";
 // import testImage from "./test.png";
 
-const Sketch = ({ title, description, sketch, model, customContent, onLog }) => {
+const Sketch = ({ projectId, title, description, sketch, sub_sketch, model, customContent, projectlog, onLog}) => {
 
   const [isModalOpen, setModalOpen] = useState(false);
 
@@ -21,13 +22,14 @@ const Sketch = ({ title, description, sketch, model, customContent, onLog }) => 
   return (
 
     <>
+    
       <div className="sketch hover-target" onClick={openModal}>
         <div className="sketch-border">
           <div className="side-line left" />
           <div className="side-line right" />
         </div>
         <img src={sketch} alt="Preview" className="image-icon" />
-        <img className="sketch-mini" src={sketch} alt="Preview"/>
+        <img src={sub_sketch} className="sketch-mini" alt="Preview"/>
         <div className="sketch_title" data-title={title}>
           {title}
         </div>
@@ -44,12 +46,26 @@ const Sketch = ({ title, description, sketch, model, customContent, onLog }) => 
             </button>
             <h1>{title}</h1>
               <div>
-                <Model
+                {/* <Model
                   modelUrl={model}
-                />
+                /> */}
+
+                {model}
               </div>
             <p>{description}</p>
-            {customContent && <div className="custom-content">{customContent}</div>}
+            <Logs projectId={projectId} />
+
+            {/* {customContent && <div className="custom-content">{customContent}</div>} */}
+
+
+
+
+
+
+            <>
+            
+            
+            </>
           </div>
         </div>
       )}

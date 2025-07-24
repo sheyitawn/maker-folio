@@ -1,14 +1,15 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Sketch from "./Components/Sketch/Sketch";
 import LiveLogFeed from './Components/LiveLogFeed/LiveLogFeed';
 import useLogEvents from './Hooks/useLogEvents.js';
 import "./App.css";
-import projects from "./Data/Projects.js";
+// import projects from "./Data/Projects.js";
 
 const Main = () => {
   const [logs, setLogs] = useState([
     { time: 'SYSTEM', message: 'Portfolio boot sequence initialized...' },
   ]);
+  const [projects, setProjects] = useState([]);
 
   const addLog = (message) => {
     const now = new Date().toLocaleTimeString();
@@ -17,6 +18,32 @@ const Main = () => {
 
   const logoRef = useRef(null);
   useLogEvents(addLog, logoRef);
+
+    useEffect(() => {
+    const fetchProjects = async () => {
+      const res = await fetch('/data/projects.json');
+      const data = await res.json();
+
+      const entries = Object.entries(data).map(([folder, details]) => {
+        const basePath = `/content/${folder}`;
+        return {
+          id: folder,
+          title: details.title || folder,
+          description: details.description || '',
+          model: `${basePath}/model.glb`,
+          sketch: `${basePath}/cover.png`,
+          sub_sketch: `${basePath}/sub.png`,
+          logs: details.logs || [],
+          metadata: details
+        };
+      });
+
+      setProjects(entries);
+    };
+
+    fetchProjects();
+  }, []);
+
 
   return (
     <div className="content">
@@ -31,16 +58,21 @@ const Main = () => {
       <div className="content_sketch-container">
 
         {projects.map((sketch, index) => (
-          <Sketch
-            key={index}
+          <><Sketch
+            key={sketch.id}
+            projectId={sketch.id}
             title={sketch.title}
             description={sketch.description}
             model={sketch.model}
             sketch={sketch.sketch}
-            customContent={sketch.customContent}
-            onLog={addLog} 
+            sub_sketch={sketch.sub_sketch}
+            projectlog={sketch.logs}
+            onLog={addLog}
           />
+          </>
         ))}
+
+
       </div>
       </div>
 

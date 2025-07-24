@@ -1,12 +1,3 @@
-.content_sketch-container {
-  display: flex;
-  flex-direction: column; /* Arrange items vertically */
-  gap: 24px; /* Space between sketches */
-  align-items: center; /* Default center alignment */
-  /* filter: none; */
-  margin: 4rem;
-}
-
 .sketch {
   position: relative;
   display: flex;
@@ -14,38 +5,56 @@
   align-items: center;
   justify-content: center;
   color: white;
-  padding: 50px;
+  padding: 2rem;
+  padding-bottom: 12rem;   /* space for mini sketch */
+  padding-right: 12rem;
   text-align: center;
   font-weight: bold;
   letter-spacing: 2px;
   width: 60vw;
-  height: 50%;
-  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
-  filter: none; 
-  position: relative;
-  display: flex;
+  max-width: 800px;
+  height: auto;
+  border: 3px solid #000;
+  overflow: visible;
+  box-sizing: border-box;
 }
+
+/* Main image */
+.image-icon {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
 
 .sketch-mini {
   position: absolute;
-  width: 40%;
-  bottom: 0rem;
-  right: -10rem;
+  width: 15rem;
+  bottom: 10rem;         /* Within padding space */
+  right: -3rem;
+  opacity: 0.3;
+  z-index: 2;
+  pointer-events: none;
 }
+
+
 
 .hover-target {
   width: 100%;
 }
 
 /* Left alignment for odd sketches */
-.content_sketch-container .sketch:nth-child(odd) {
-  align-self: flex-start; /* Align to the left */
-}
+/* .content_sketch-container .sketch:nth-child(odd) {
+  align-self: flex-start;
+} */
 
 /* Right alignment for even sketches */
-.content_sketch-container .sketch:nth-child(even) {
-  align-self: flex-end; /* Align to the right */
-}
+/* .content_sketch-container .sketch:nth-child(even) {
+  align-self: flex-end;
+} */
 
 
 
@@ -252,10 +261,10 @@
   }
 }
 
-.sketch {
+/* .sketch {
   position: relative;
-  overflow: hidden; /* Important to contain the border effect */
-}
+  overflow: hidden;
+} */
 
 /* Border lines */
 .sketch-border {
