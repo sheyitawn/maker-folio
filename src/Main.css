@@ -1,63 +1,4 @@
-html {
-    cursor: none;
-  }
-  
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #13173A;
-    background-image: radial-gradient(
-      circle at center,
-      rgba(19, 23, 58, 0) 50%,
-      rgba(0, 0, 0, 0.4) 100%
-    );
-    color: white;
-    overflow-y: hidden;
-    cursor: none;
-  }
-  
-  
-  ::-moz-selection { /* Code for Firefox */
-    color: #13173A;
-    background: white;
-  }
-  
-  ::selection {
-    color: #13173A;
-    background: white;
-  }
-  
-  /* 
-  .content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-  } */
-  
-  ::-webkit-scrollbar {
-    width: .3rem;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #13173A; 
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #11142b; 
-    border-radius: .2rem;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #23284f; 
-  
-  }
-  
-  .content {
+   .content {
     margin: 1.3rem;
     display: flex;
     flex-direction: column;
@@ -93,8 +34,9 @@ html {
     background-image: 
       linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
       linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-    background-size: 12px 12px; /* Grid cell size */
+    background-size: 1.2vw 1.2vw; /* Grid cell size */
     position: relative; /* Needed for pseudo-elements to position relative to this element */
+    box-sizing: border-box;
   }
   
   .content_box::before {
@@ -132,6 +74,15 @@ html {
     pointer-events: none; /* Ensures it doesn't interfere with interactions */
   }
   
+.content_sketch-container {
+  display: grid;
+  gap: 1rem;
+  margin: 2rem;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+}
+
+
   
   
   
@@ -197,25 +148,25 @@ html {
   }
   
   
-  .row1 {
-    grid-column: span 1; /* First row has one column */
+  /* .row1 {
+    grid-column: span 1;
   }
   
   .row2 {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Second row with 2 equal columns */
-    gap: 10px; /* Space between columns */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
   
   .row3 {
     display: grid;
-    grid-template-columns: repeat(3, 1fr) 2fr; /* Third row: 3 small columns + 1 larger */
-    gap: 10px; /* Space between columns */
+    grid-template-columns: repeat(3, 1fr) 2fr;
+    gap: 10px; 
   }
   
   .col4 {
-    /* Larger last column in the third row */
-    background-color: #f0f0f0; /* Example styling for visibility */
+
+    background-color: #f0f0f0; 
   }
   
-  
+   */
