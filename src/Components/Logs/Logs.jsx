@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
+import './logs.css'
 
 const Logs = ({ projectId }) => {
   const [logs, setLogs] = useState([]);
@@ -21,8 +22,10 @@ const Logs = ({ projectId }) => {
   return (
     <div className="logs-container">
       id: {projectId}
+
       {logs.map((log, i) => (
         <div key={i} className="log-entry">
+          <h3>title: {log.filename}</h3>
           <h4>{new Date(log.date).toLocaleDateString()}</h4>
           <ReactMarkdown>{log.content}</ReactMarkdown>
           {log.images?.map((img, idx) => (

@@ -6,18 +6,97 @@
   justify-content: center;
   color: white;
   padding: 2rem;
-  padding-bottom: 12rem;   /* space for mini sketch */
-  padding-right: 12rem;
+  padding-bottom: 4rem;
+  padding-right: 15rem;
   text-align: center;
   font-weight: bold;
   letter-spacing: 2px;
-  width: 60vw;
+  width: 20vw;
   max-width: 800px;
   height: auto;
-  border: 3px solid #000;
   overflow: visible;
   box-sizing: border-box;
+  /* border: solid red 5px; */
 }
+
+@keyframes dash-loop {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -522; /* Must match stroke-dasharray length */
+    stroke-dasharray: .2;
+  }
+}
+
+
+
+
+/* --- SVG initially hidden --- */
+.sketch svg {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+/* --- rect styling --- */
+.sketch rect {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 3;
+  stroke-dasharray: 522; /* perimeter approx. for a rounded rect */
+  stroke-dashoffset: 0;
+  rx: 20;
+  ry: 20;
+  /* transition: stroke 0.5s ease; */
+  /* transition: stroke-dasharray 1.35s cubic-bezier(0.19, 1, 0.22, 1); */
+}
+
+/* --- Hover: Show SVG and animate rect --- */
+.sketch:hover svg {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* .sketch:hover {
+  background: transparent;
+  font-weight: 900;
+  letter-spacing: 1px;
+} */
+
+/* .sketch:hover rect {
+  stroke-width: 2;
+  stroke-dasharray: 0, 310;
+  stroke-dashoffset: 1;
+  transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+  animation: draw-then-loop 8s linear infinite;
+  
+} */
+.sketch:hover rect {
+  animation: dash-loop .5s cubic-bezier(0.19, 1, 0.9, 1) forwards;
+}
+
+
+/* 
+@keyframes dash-loop {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -522; 
+  }
+} */
+
+
+
+
+/* --- */
+
 
 /* Main image */
 .image-icon {
@@ -32,12 +111,17 @@
 
 .sketch-mini {
   position: absolute;
-  width: 15rem;
-  bottom: 10rem;         /* Within padding space */
-  right: -3rem;
-  opacity: 0.3;
+  width: 20rem;
+  bottom: 4rem;         /* Within padding space */
+  right: 0;
+  /* opacity: 0.5; */
   z-index: 2;
   pointer-events: none;
+  width: 40%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
 
@@ -57,10 +141,9 @@
 } */
 
 
-
 /* Hover effect: Blur all other sketches except the hovered one */
 .content_sketch-container:hover .sketch {
-  filter: blur(4px);
+  filter: blur(6px);
   transition: filter 0.3s ease;
 }
 
@@ -88,7 +171,7 @@
 }
 
 .sketch_title::before {
-  color: rgb(75, 69, 120); /* Cyan glitch layer */
+  color: rgb(47, 47, 51); /* Cyan glitch layer */
   z-index: -1;
   transform: translate(0, 0);
 }
@@ -105,6 +188,14 @@
 }
 
 .sketch:hover .sketch_title::after {
+  animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both 100;
+}
+
+.sketch:hover .image-icon {
+  animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both 100;
+}
+
+.sketch:hover .sketch-mini {
   animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both 100;
 }
 
@@ -144,7 +235,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.89); /* Semi-transparent backdrop */
   display: flex;
   justify-content: center;
@@ -155,23 +246,25 @@
   z-index: 9999;
   opacity: 0; /* Initially hidden */
   animation: fadeIn 0.5s forwards; /* Apply fade-in animation */
+  margin: 0;
+  padding: 0;
   /* pointer-events: none; */
 }
 
 /* Modal content styling */
 .modal-content {
+  border: 2px solid white;
+  width: 100%;
+  height: 86vh;
   background: #13173A;
   border-radius: 5px;
   padding: 20px;
   /* max-width: 600px; */
-  width: 100vw;
-  height: 100vh;
   text-align: center;
   position: relative;
+  margin: .1rem 1.3rem;
 
-  border: 2px solid white;
-  width: 95vw;
-  height: 86vh;
+
   overflow-y: scroll;
 
   background-image: 
@@ -196,7 +289,7 @@
     to right,
     rgb(255, 255, 255), /* Line color */
     rgb(255, 255, 255) 1px,
-    transparent 1px,
+    transparent 2px,
     transparent 36px /* Match the grid size */
   );
   z-index: 1;
@@ -214,7 +307,7 @@
     to bottom,
     rgb(255, 255, 255), /* Line color */
     rgb(255, 255, 255) 1px,
-    transparent 1px,
+    transparent 2px,
     transparent 36px /* Match the grid size */
   );
   z-index: 1;
@@ -329,9 +422,12 @@
 }
 
 .sketch_title {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    font-family: 'Courier', monospace;
+    font-size: 1.8em;
+    text-align: center;
+    font-weight: 300;
+    /* margin-left: 8rem; */
+    /* width: 40rem; */
 }
 
 /* On hover, animate the lines

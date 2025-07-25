@@ -1,8 +1,7 @@
 {
-  "flame_punching_fist": {
+  "000_flame_punching_fist": {
     "title": "Flame Punching Fist",
     "type": "GADGET",
-    "coverImg": "Project1.png or cover.png",
     "model3D": null,
     "tags": [
       "gadget",
@@ -37,19 +36,112 @@
       }
     ]
   },
-  "project_template": {
-    "title": null,
-    "coverImg": null,
+  "001_adventure_time_voice_box": {
+    "title": "Adventure Time Voice Box",
+    "type": "PROP",
     "model3D": null,
-    "tags": null,
-    "description": null,
+    "tags": [
+      "gadget",
+      "hardware"
+    ],
+    "description": "A working voice box prop based on lady rainicorn's voice changer.",
+    "logs": [
+      {
+        "date": "2025-07-24T11:52:00.000Z",
+        "imgs": [
+          "cover.png"
+        ],
+        "tags": [
+          "hardware",
+          "live"
+        ],
+        "content": "test log! smile if you see this!",
+        "filename": "log-2025-24-07.md"
+      },
+      {
+        "date": "2024-10-28T20:45:00.000Z",
+        "imgs": [
+          "cover.png"
+        ],
+        "tags": [
+          "hardware",
+          "bug"
+        ],
+        "content": "another log! for some reason, when i connect the power bank, it just stops working with the voice module. everything else seems fine though...",
+        "filename": "log-it's not getting powered by power bank.md"
+      }
+    ]
+  },
+  "002_flame_punching_fist": {
+    "title": "Flame Punching Fist",
+    "type": "GADGET",
+    "model3D": null,
+    "tags": [
+      "gadget",
+      "hardware"
+    ],
+    "description": "A fist that shoots flames when you punch",
     "logs": [
       {
         "date": null,
-        "imgs": null,
-        "tags": null,
-        "content": "",
-        "filename": "log-yyyy-mm-dd.md"
+        "imgs": [
+          "cover.png"
+        ],
+        "tags": [
+          "hardware",
+          "live",
+          "new"
+        ],
+        "content": "another log!",
+        "filename": "log-2025-24-06.md"
+      },
+      {
+        "date": null,
+        "imgs": [
+          "cover.png"
+        ],
+        "tags": [
+          "hardware",
+          "live"
+        ],
+        "content": "test log! smile if you see this!",
+        "filename": "log-2025-24-07.md"
+      }
+    ]
+  },
+  "003_adventure_time_voice_box": {
+    "title": "Adventure Time Voice Box",
+    "type": "PROP",
+    "model3D": null,
+    "tags": [
+      "gadget",
+      "hardware"
+    ],
+    "description": "A working voice box prop based on lady rainicorn's voice changer.",
+    "logs": [
+      {
+        "date": "2025-07-24T11:52:00.000Z",
+        "imgs": [
+          "cover.png"
+        ],
+        "tags": [
+          "hardware",
+          "live"
+        ],
+        "content": "test log! smile if you see this!",
+        "filename": "log-2025-24-07.md"
+      },
+      {
+        "date": "2024-10-28T20:45:00.000Z",
+        "imgs": [
+          "cover.png"
+        ],
+        "tags": [
+          "hardware",
+          "bug"
+        ],
+        "content": "another log! for some reason, when i connect the power bank, it just stops working with the voice module. everything else seems fine though...",
+        "filename": "log-it's not getting powered by power bank.md"
       }
     ]
   }

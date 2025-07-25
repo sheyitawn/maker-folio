@@ -29,6 +29,7 @@ const Main = () => {
         return {
           id: folder,
           title: details.title || folder,
+          type: details.type || '',
           description: details.description || '',
           model: `${basePath}/model.glb`,
           sketch: `${basePath}/cover.png`,
@@ -61,6 +62,7 @@ const Main = () => {
           <><Sketch
             key={sketch.id}
             projectId={sketch.id}
+            type={sketch.type}
             title={sketch.title}
             description={sketch.description}
             model={sketch.model}

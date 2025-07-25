@@ -5,7 +5,7 @@ import Logs from "../Logs/Logs";
 // import { ReactComponent as MyGraphic } from "./one.svg";
 // import testImage from "./test.png";
 
-const Sketch = ({ projectId, title, description, sketch, sub_sketch, model, customContent, projectlog, onLog}) => {
+const Sketch = ({ projectId, title, description, sketch, sub_sketch, model, type, onLog}) => {
 
   const [isModalOpen, setModalOpen] = useState(false);
 
@@ -19,19 +19,25 @@ const Sketch = ({ projectId, title, description, sketch, sub_sketch, model, cust
     onLog?.(`Closed project: ${title}`);
   };
 
+  var combinedTitle = type + " • " + title
+
   return (
 
     <>
     
       <div className="sketch hover-target" onClick={openModal}>
-        <div className="sketch-border">
+
+        <svg>
+          <rect x="0" y="0" fill="none" width="100%" height="100%" />
+        </svg>
+        {/* <div className="sketch-border">
           <div className="side-line left" />
           <div className="side-line right" />
-        </div>
+        </div> */}
         <img src={sketch} alt="Preview" className="image-icon" />
-        <img src={sub_sketch} className="sketch-mini" alt="Preview"/>
-        <div className="sketch_title" data-title={title}>
-          {title}
+        <img src={sub_sketch} className="sketch-mini" alt="mini sketch"/>
+        <div className="sketch_title" data-title={combinedTitle}>
+          {combinedTitle}
         </div>
       </div>
 
