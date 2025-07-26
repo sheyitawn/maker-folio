@@ -1,11 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Sketch from "./Components/Sketch/Sketch";
 import LiveLogFeed from './Components/LiveLogFeed/LiveLogFeed';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import useLogEvents from './Hooks/useLogEvents.js';
 import "./App.css";
-// import projects from "./Data/Projects.js";
+import StaggeredGrid from './Components/StaggeredGrid/StaggeredGrid.jsx';
 
-const Main = () => {
+const Main = (entered, loading, setLoading) => {
+
+  const key = loading ? 'loading' : 'main';
   const [logs, setLogs] = useState([
     { time: 'SYSTEM', message: 'Portfolio boot sequence initialized...' },
   ]);
@@ -19,7 +22,7 @@ const Main = () => {
   const logoRef = useRef(null);
   useLogEvents(addLog, logoRef);
 
-    useEffect(() => {
+  useEffect(() => {
     const fetchProjects = async () => {
       const res = await fetch('/data/projects.json');
       const data = await res.json();
@@ -45,8 +48,9 @@ const Main = () => {
     fetchProjects();
   }, []);
 
-
   return (
+     <TransitionGroup component={null}>
+      <CSSTransition key={key} classNames="fade" timeout={300}>
     <div className="content">
       <div className="content_header">
         <div className="content_header-date">2020 - 2025</div>
@@ -54,38 +58,37 @@ const Main = () => {
       </div>
 
       <div className="content_box">
-      <div className="content_graph-paper"></div>
+        <div className="content_graph-paper"></div>
 
-      <div className="content_sketch-container">
-
-        {projects.map((sketch, index) => (
-          <><Sketch
-            key={sketch.id}
-            projectId={sketch.id}
-            type={sketch.type}
-            title={sketch.title}
-            description={sketch.description}
-            model={sketch.model}
-            sketch={sketch.sketch}
-            sub_sketch={sketch.sub_sketch}
-            projectlog={sketch.logs}
-            onLog={addLog}
-          />
-          </>
-        ))}
-
-
-      </div>
+        <StaggeredGrid className="content_sketch-container">
+          {projects.map((sketch) => (
+            <Sketch
+              key={sketch.id}
+              projectId={sketch.id}
+              type={sketch.type}
+              title={sketch.title}
+              description={sketch.description}
+              model={sketch.model}
+              sketch={sketch.sketch}
+              sub_sketch={sketch.sub_sketch}
+              projectlog={sketch.logs}
+              onLog={addLog}
+            />
+          ))}
+        </StaggeredGrid>
       </div>
 
       <div className="content_footnote">
         <div className="content_footnote_header">Seyitan Adeleke pronounced sheyitawn</div>
         <div className="content_footnote_center">// DEV NOTES</div>
         <div className="content_footnote_footer">links</div>
-    
       </div>
+
       <LiveLogFeed logs={logs} />
     </div>
+
+          </CSSTransition>
+    </TransitionGroup>
   );
 };
 

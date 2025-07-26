@@ -6,26 +6,32 @@ import Logs from "../Logs/Logs";
 // import testImage from "./test.png";
 
 const Sketch = ({ projectId, title, description, sketch, sub_sketch, model, type, onLog}) => {
-
+  const [isClosing, setIsClosing] = useState(false);
   const [isModalOpen, setModalOpen] = useState(false);
 
   const openModal = () => {
     setModalOpen(true);
     onLog?.(`Opened project: ${title}`);
+    setIsClosing(false);
+
   };
   
   const closeModal = () => {
-    setModalOpen(false);
-    onLog?.(`Closed project: ${title}`);
-  };
 
+
+    setIsClosing(true);
+    setTimeout(() => {
+      setModalOpen(false);
+      onLog?.(`Closed project: ${title}`);
+    }, 500); // Match animation duration
+  };
   var combinedTitle = type + " • " + title
 
   return (
 
     <>
     
-      <div className="sketch hover-target" onClick={openModal}>
+      <div className="sketch hover-target--grow distort-hover" onClick={openModal}>
 
         <svg>
           <rect x="0" y="0" fill="none" width="100%" height="100%" />
@@ -46,15 +52,15 @@ const Sketch = ({ projectId, title, description, sketch, sub_sketch, model, type
       {isModalOpen && (
         <div className="modal" onClick={closeModal}>
           <div className="scanlines" />
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close" onClick={closeModal}>
-              ✕
+          <div className={`modal-content ${isClosing ? 'slide-out' : 'slide-in'}`} onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close hover-target--grow" onClick={closeModal}>
+              ✕ 
             </button>
             <h1>{title}</h1>
               <div>
-                {/* <Model
+                <Model
                   modelUrl={model}
-                /> */}
+                />
 
                 {model}
               </div>
@@ -66,6 +72,7 @@ const Sketch = ({ projectId, title, description, sketch, sub_sketch, model, type
 
 
 
+            closing{isClosing}
 
 
             <>

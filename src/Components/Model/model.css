@@ -7,13 +7,13 @@
     height: 100%;
   }
   
-  .model_canvas {
+  .model_model {
     width: 100%;
     max-width: 600px;
     height: 500px;
-    background: linear-gradient(to bottom right, #1e1e2f, #2c2c3c);
+    /* background: linear-gradient(to bottom right, #1e1e2f, #2c2c3c); */
     border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); */
     overflow: hidden;
   }
   

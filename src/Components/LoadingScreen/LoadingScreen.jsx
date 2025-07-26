@@ -24,7 +24,7 @@ const LoadingScreen = ({ onFinish }) => {
         if (prev < 100) return prev + 1;
         clearInterval(interval);
         setTimeout(() => {
-          if (canPlaySound) audio.play();
+          audio.play();
           if (typeof onFinish === 'function') onFinish();
         }, 500);
         return 100;
@@ -45,7 +45,7 @@ const LoadingScreen = ({ onFinish }) => {
     <div className="loading-screen">
       <div className="scanlines" />
       <div className="loading-text">
-        INITIALIZING ROADMAP ...
+        INITIALISING WORKSPACE ...
         <span className="loading-percent">{progress}%</span>
       </div>
       <div className="loading-bar">
