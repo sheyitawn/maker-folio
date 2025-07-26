@@ -1,30 +1,75 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { Routes, Route, useLocation } from 'react-router';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import LoadingScreen from './Components/LoadingScreen/LoadingScreen';
-import Main from './Main'; // your actual app
-import "./Main.css";
-import DotCursor from "./Components/DotCursor/DotCursor";
+import Main from './Main';
+import Landing from './Landing';
+import DotCursor from './Components/DotCursor/DotCursor';
+import './Main.css';
+
+const AnimatedRoutes = ({ entered, setEntered, loading, setLoading }) => {
+  const location = useLocation();
+
+  return (
+    <TransitionGroup>
+      <CSSTransition key={location.pathname} classNames="fade" timeout={300}>
+        <Routes location={location}>
+          <Route
+            path="/"
+            element={
+              <Landing
+                onEnter={() => {
+                  setEntered(true);
+                  setLoading(true);
+                }}
+              />
+            }
+          />
+          <Route
+            path="/folio"
+            element={
+              entered ? (
+                loading ? (
+                  <LoadingScreen onFinish={() => setLoading(false)} />
+                ) : (
+                  <Main  entered={entered}
+                  loading={loading}
+                  setLoading={setLoading}/>
+                )
+              ) : (
+                <Landing
+                  onEnter={() => {
+                    setEntered(true);
+                    setLoading(true);
+                  }}
+                />
+              )
+            }
+          />
+
+          {/* <Route path='/' element={<Main />} /> */}
+        </Routes>
+      </CSSTransition>
+    </TransitionGroup>
+  );
+};
 
 const App = () => {
-  const [loading, setLoading] = useState(true);
+  const [entered, setEntered] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    // Simulate loading
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 4000); // 2.5 seconds
-
-    return () => clearTimeout(timer);
-  }, []);
-
-      
   return (
     <>
       <DotCursor />
       <div className="scanlines" />
-      {loading ? <LoadingScreen onFinish={() => setLoading(false)} /> : <Main />}
+      <AnimatedRoutes
+        entered={entered}
+        setEntered={setEntered}
+        loading={loading}
+        setLoading={setLoading}
+      />
     </>
   );
-  
 };
 
 export default App;
