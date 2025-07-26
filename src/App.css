@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 html {
     cursor: none;
   }
@@ -56,3 +57,169 @@ html {
     background: #23284f; 
   
   }
+
+
+.glitch-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+
+  min-height: 100%;
+  height: 100vh;
+  font-family: 'Share Tech Mono', monospace;
+
+}
+
+.glitch-container h2{
+  margin: 0;
+  color: #b0caff;
+
+}
+
+.glitch_button {
+  font-family: 'Share Tech Mono', monospace;
+  display: block;
+  position: relative;
+  background: none;
+  border: none;
+  outline: none;
+  /* cursor: pointer; */
+  /* margin-top: 10px; */
+  padding: .6rem 1.8rem;
+  font-size: 1em;
+  letter-spacing: 0.35em;
+  text-align: center;
+  text-transform: uppercase;
+  border: 1px solid #b0caff;
+  color: #b0caff;
+  transition: all 0.2s ease;
+  /* margin: 0 auto; */
+  margin-top: 20px;
+    cursor: none;
+
+}
+
+.glitch_button:before,
+.glitch_button:after {
+  content: 'ENTER';
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 8px 0;
+  width: 100%;
+  clip: rect(0px, 0px, 0px, 0px);
+  background: rgb(9, 0, 128);
+  color: #000;
+  pointer-events: none;
+}
+
+.glitch_button:before {
+  left: -3px;
+  top: -2px;
+  text-shadow: 2px 0 #b0caff;
+  box-shadow: 2px 0 #b0caff;
+}
+
+.glitch_button:after {
+  left: 2px;
+  bottom: -2px;
+  text-shadow: -1px 0 #b0caff;
+  box-shadow: -1px 0 #b0caff;
+}
+
+.glitch_button:hover {
+  background: #b0caff;
+  color: black;
+}
+
+.glitch_button:hover:before {
+  animation: glitch-anim 1.5s infinite linear alternate-reverse;
+}
+
+.glitch_button:hover:after {
+  animation: glitch-anim 2s infinite linear alternate;
+}
+
+@keyframes glitch-anim {
+  0% {
+    clip: rect(-3px, 600px, 0px, 0px);
+  }
+  5.88235% {
+    clip: rect(0px, 600px, 0px, 0px);
+  }
+  11.76471% {
+    clip: rect(-3px, 600px, 0px, 0px);
+  }
+  17.64706% {
+    clip: rect(-3px, 600px, 0px, 0px);
+  }
+  23.52941% {
+    clip: rect(100px, 600px, 100px, 0px);
+  }
+  29.41176% {
+    clip: rect(0px, 600px, 600px, 0px);
+  }
+  35.29412% {
+    clip: rect(100px, 600px, 0px, 0px);
+  }
+  41.17647% {
+    clip: rect(0px, 600px, 600px, 0px);
+  }
+  47.05882% {
+    clip: rect(100px, 600px, 0px, 0px);
+  }
+  52.94118% {
+    clip: rect(-3px, 600px, 0px, 0px);
+  }
+  58.82353% {
+    clip: rect(100px, 450px, 100px, 0px);
+  }
+  64.70588% {
+    clip: rect(0px, 450px, 0px, 0px);
+  }
+  70.58824% {
+    clip: rect(100px, 450px, 100px, 0px);
+  }
+  76.47059% {
+    clip: rect(0px, 450px, 0px, 0px);
+  }
+  82.35294% {
+    clip: rect(0px, 450px, 0px, 0px);
+  }
+  88.23529% {
+    clip: rect(0px, 450px, 0px, 0px);
+  }
+  94.11765% {
+    clip: rect(0px, 450px, 0px, 0px);
+  }
+  100% {
+    clip: rect(0px, 450px, 0px, 0px);
+  }
+}
+
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 900ms ease;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 900ms ease;
+}
+
+
+.distort-hover {
+  transition: all 0.3s ease;
+}
+.distort-hover:hover {
+  filter: contrast(1.3) brightness(1.1) saturate(1.2);
+  transform: scale(1.05);
+}
