@@ -16,5 +16,7 @@ npm run update-projects
 npm start
 ```
 
+remember to change package.json to sync w/ obsidian file
+
 ## Lisence
 MIT © sheyitawn

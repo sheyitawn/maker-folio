@@ -22,8 +22,9 @@
   },
   "scripts": {
     "update-projects": "node src/scripts/generateProjectData.js",
+    "move-content": "powershell -Command \"Copy-Item -Recurse -Force 'C:/Users/asus/Documents/Work/Personal-Vault/WORK/maker-folio/logs/*' 'public/content'\"",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "npm run move-content && npm run update-projects && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
