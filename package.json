@@ -2,24 +2,6 @@
   "name": "maker-folio",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@react-three/drei": "^9.117.2",
-    "@react-three/fiber": "^8.17.10",
-    "@splinetool/react-spline": "^4.0.0",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "framer-motion": "^12.23.9",
-    "gray-matter": "^4.0.3",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-markdown": "^10.1.0",
-    "react-router-dom": "^7.7.1",
-    "react-scripts": "5.0.1",
-    "react-transition-group": "^4.4.5",
-    "three": "^0.170.0",
-    "web-vitals": "^2.1.4"
-  },
   "scripts": {
     "update-projects": "node src/scripts/generateProjectData.js",
     "move-content": "powershell -Command \"Copy-Item -Recurse -Force 'C:/Users/asus/Documents/Work/Personal-Vault/WORK/maker-folio/logs/*' 'public/content'\"",
@@ -45,5 +27,23 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "dependencies": {
+    "@react-three/drei": "^9.117.2",
+    "@react-three/fiber": "^8.17.10",
+    "@splinetool/react-spline": "^4.0.0",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "framer-motion": "^12.23.9",
+    "gray-matter": "^4.0.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-markdown": "^10.1.0",
+    "react-router-dom": "^7.8.0",
+    "react-scripts": "^5.0.1",
+    "react-transition-group": "^4.4.5",
+    "three": "^0.170.0",
+    "web-vitals": "^2.1.4"
   }
 }
