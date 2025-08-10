@@ -1,7 +1,7 @@
 # MAKER_PORTFOLIO [WORK IN PROGRESS]
 
 An interactive portfolio experience built with React and Three.js.  
-This site showcases all my physical projects with detailed descriptions of how they were made.
+This site showcases all my projects with detailed descriptions of how they were made.
 
 ![alt text](image-1.png)
 ![alt text](image-2.png)
@@ -20,3 +20,5 @@ remember to change package.json to sync w/ obsidian file
 
 ## Lisence
 MIT © sheyitawn
+
+don't steal my portfolio pwetty pwease
