@@ -1,11 +1,11 @@
 ---
-title: Adventure Time Voice Box
-type: PROP
-model3D: 
+title: Handheld Solder Rig
+type: TOOL
+progress: 
 tags:
   - gadget
   - hardware
-description: A working voice box prop based on lady rainicorn's voice changer.
+description: I still don't know if this should exist...
 ---
 This is the test description for the lady rainicorn voice box. so cool, so nice
 

@@ -1,7 +1,7 @@
 ---
 title: Flame Punching Fist
 type: GADGET
-model3D: 
+progress: 
 tags:
   - gadget
   - hardware

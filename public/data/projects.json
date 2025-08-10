@@ -2,7 +2,7 @@
   "000_flame_punching_fist": {
     "title": "Flame Punching Fist",
     "type": "GADGET",
-    "model3D": null,
+    "progress": "done",
     "tags": [
       "gadget",
       "hardware"
@@ -72,10 +72,10 @@
       }
     ]
   },
-  "002_flame_punching_fist": {
+  "002_chaotic_twister": {
     "title": "Flame Punching Fist",
     "type": "GADGET",
-    "model3D": null,
+    "progress": null,
     "tags": [
       "gadget",
       "hardware"
@@ -109,15 +109,230 @@
       }
     ]
   },
-  "003_adventure_time_voice_box": {
+  "003_nfc_ring": {
+    "title": "NFC Ring",
+    "type": "TOOL",
+    "progress": null,
+    "tags": [
+      "gadget",
+      "hardware"
+    ],
+    "description": "Tap to find out. Oh wait...",
+    "logs": [
+      {
+        "date": "2025-07-24T11:52:00.000Z",
+        "imgs": [
+          "cover.png"
+        ],
+        "tags": [
+          "hardware",
+          "live"
+        ],
+        "content": "test log! smile if you see this!",
+        "filename": "log-2025-24-07.md"
+      },
+      {
+        "date": "2024-10-28T20:45:00.000Z",
+        "imgs": [
+          "cover.png"
+        ],
+        "tags": [
+          "hardware",
+          "bug"
+        ],
+        "content": "another log! for some reason, when i connect the power bank, it just stops working with the voice module. everything else seems fine though...",
+        "filename": "log-it's not getting powered by power bank.md"
+      }
+    ]
+  },
+  "004_digital_id": {
+    "title": "Digital ID card",
+    "type": "PROP",
+    "progress": null,
+    "tags": [
+      "gadget",
+      "hardware"
+    ],
+    "description": "Not your average ID card...",
+    "logs": [
+      {
+        "date": "2025-07-24T11:52:00.000Z",
+        "imgs": [
+          "cover.png"
+        ],
+        "tags": [
+          "hardware",
+          "live"
+        ],
+        "content": "test log! smile if you see this!",
+        "filename": "log-2025-24-07.md"
+      },
+      {
+        "date": "2024-10-28T20:45:00.000Z",
+        "imgs": [
+          "cover.png"
+        ],
+        "tags": [
+          "hardware",
+          "bug"
+        ],
+        "content": "another log! for some reason, when i connect the power bank, it just stops working with the voice module. everything else seems fine though...",
+        "filename": "log-it's not getting powered by power bank.md"
+      }
+    ]
+  },
+  "005_gesture_controller": {
+    "title": "Gesture controller for Drone",
+    "type": "PROP",
+    "progress": null,
+    "tags": [
+      "gadget",
+      "hardware"
+    ],
+    "description": "My dissertation project. A controller glove for drones",
+    "logs": [
+      {
+        "date": "2025-07-24T11:52:00.000Z",
+        "imgs": [
+          "cover.png"
+        ],
+        "tags": [
+          "hardware",
+          "live"
+        ],
+        "content": "test log! smile if you see this!",
+        "filename": "log-2025-24-07.md"
+      },
+      {
+        "date": "2024-10-28T20:45:00.000Z",
+        "imgs": [
+          "cover.png"
+        ],
+        "tags": [
+          "hardware",
+          "bug"
+        ],
+        "content": "another log! for some reason, when i connect the power bank, it just stops working with the voice module. everything else seems fine though...",
+        "filename": "log-it's not getting powered by power bank.md"
+      }
+    ]
+  },
+  "006_sEMG_band": {
+    "title": "sEmg band",
+    "type": "GADGET",
+    "progress": null,
+    "tags": [
+      "gadget",
+      "hardware"
+    ],
+    "description": "These barely exist, but they are guaranteed the future of controllers. Why's that?",
+    "logs": [
+      {
+        "date": "2025-07-24T11:52:00.000Z",
+        "imgs": [
+          "cover.png"
+        ],
+        "tags": [
+          "hardware",
+          "live"
+        ],
+        "content": "test log! smile if you see this!",
+        "filename": "log-2025-24-07.md"
+      },
+      {
+        "date": "2024-10-28T20:45:00.000Z",
+        "imgs": [
+          "cover.png"
+        ],
+        "tags": [
+          "hardware",
+          "bug"
+        ],
+        "content": "another log! for some reason, when i connect the power bank, it just stops working with the voice module. everything else seems fine though...",
+        "filename": "log-it's not getting powered by power bank.md"
+      }
+    ]
+  },
+  "007_handheld_solder_rig": {
+    "title": "Handheld Solder Rig",
+    "type": "TOOL",
+    "progress": null,
+    "tags": [
+      "gadget",
+      "hardware"
+    ],
+    "description": "I still don't know if this should exist...",
+    "logs": [
+      {
+        "date": "2025-08-10T09:59:00.000Z",
+        "imgs": [
+          "cover.png"
+        ],
+        "tags": [
+          "hardware"
+        ],
+        "content": "Writing this a few days later. Maker-folio went live yesterday. Did some work on the design, then CAD. Made my first working gears. Only issue is they are really tiny - heck - the whole thing is really tiny.  So my printer is having a really hard time. I also think it has to do with the humidity because apparently filament has to be dry? Reminds me of when my dad got a 3D printer way back when they were first released, and the moment it stopped printing, I just couldn't figure it out ,so I never printed again... part 2? Jk \n\n[image of wasted filament]\n\n[image/ video of CAD]",
+        "filename": "log-beef with my 3D printer.md"
+      },
+      {
+        "date": "2025-07-24T11:52:00.000Z",
+        "imgs": [
+          "cover.png"
+        ],
+        "tags": [
+          "hardware",
+          "live"
+        ],
+        "content": "[images of drawings]",
+        "filename": "log-2025-30-07.md"
+      }
+    ]
+  },
+  "008_sEmg_controlled_arm": {
     "title": "Adventure Time Voice Box",
     "type": "PROP",
-    "model3D": null,
+    "progress": null,
     "tags": [
       "gadget",
       "hardware"
     ],
     "description": "A working voice box prop based on lady rainicorn's voice changer.",
+    "logs": [
+      {
+        "date": "2025-07-24T11:52:00.000Z",
+        "imgs": [
+          "cover.png"
+        ],
+        "tags": [
+          "hardware",
+          "live"
+        ],
+        "content": "test log! smile if you see this!",
+        "filename": "log-2025-24-07.md"
+      },
+      {
+        "date": "2024-10-28T20:45:00.000Z",
+        "imgs": [
+          "cover.png"
+        ],
+        "tags": [
+          "hardware",
+          "bug"
+        ],
+        "content": "another log! for some reason, when i connect the power bank, it just stops working with the voice module. everything else seems fine though...",
+        "filename": "log-it's not getting powered by power bank.md"
+      }
+    ]
+  },
+  "009_life_dashboard": {
+    "title": "Life Dashboard",
+    "type": "TOOL",
+    "model3D": null,
+    "tags": [
+      "software",
+      "productivity"
+    ],
+    "description": "A dashboard that shows me an overview of my life, and tracks some of it",
     "logs": [
       {
         "date": "2025-07-24T11:52:00.000Z",
