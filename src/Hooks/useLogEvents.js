@@ -62,7 +62,7 @@ export default function useLogEvents(addLog, logoRef) {
         keys.current.shift();
       }
       if (keys.current.join(',') === KONAMI_CODE.join(',')) {
-        addLog('Secret link unlocked 🕹️ (https://boulderbugle.com/top-secret-link-f7zgtbY4)');  // dont look!
+        addLog('Secret link unlocked 🕹️ https://boulderbugle.com/top-secret-link-f7zgtbY4');  // dont look!
         keys.current = []; // reset after unlock
       }
     };
