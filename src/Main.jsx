@@ -54,7 +54,7 @@ const Main = (entered, loading, setLoading) => {
     <div className="content">
       <div className="content_header">
         <div className="content_header-date">2020 - 2025</div>
-        <div className="content_header-title" ref={logoRef}>MAKER_PORTFOLIO</div>
+        <div className="content_header-title hover-target--fill distort-hover glitch_button" ref={logoRef}>MAKER_FOLIO</div>
       </div>
 
       <div className="content_box">
