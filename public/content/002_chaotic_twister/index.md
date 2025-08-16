@@ -1,10 +1,10 @@
 ---
-title: Flame Punching Fist
-type: GADGET
+title: Chaotic Twister
+type: PROP
 progress: 
 tags:
-  - gadget
   - hardware
+  - video
 description: A fist that shoots flames when you punch
 ---
 This is the test description for the flame punching fist. so cool, so nice
