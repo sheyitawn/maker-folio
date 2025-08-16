@@ -73,12 +73,12 @@
     ]
   },
   "002_chaotic_twister": {
-    "title": "Flame Punching Fist",
-    "type": "GADGET",
+    "title": "Chaotic Twister",
+    "type": "PROP",
     "progress": null,
     "tags": [
-      "gadget",
-      "hardware"
+      "hardware",
+      "video"
     ],
     "description": "A fist that shoots flames when you punch",
     "logs": [
@@ -164,6 +164,18 @@
           "hardware",
           "live"
         ],
+        "content": "Just did a V2 design of the screen to make all the important stuff bigger and added more meaningful data. thoning of adding a camera so that if im at a convention, i can take photos of people and add them to a digital rolodex. Not sure how ill track their name, unless i ask. will probably need to ask for the picture in the first place...",
+        "filename": "log-2025-10-08.md"
+      },
+      {
+        "date": "2025-07-24T11:52:00.000Z",
+        "imgs": [
+          "cover.png"
+        ],
+        "tags": [
+          "hardware",
+          "live"
+        ],
         "content": "test log! smile if you see this!",
         "filename": "log-2025-24-07.md"
       },
@@ -223,10 +235,23 @@
     "progress": null,
     "tags": [
       "gadget",
-      "hardware"
+      "hardware",
+      "ML"
     ],
     "description": "These barely exist, but they are guaranteed the future of controllers. Why's that?",
     "logs": [
+      {
+        "date": "2025-08-12T17:09:00.000Z",
+        "imgs": [
+          "cover.png"
+        ],
+        "tags": [
+          "hardware",
+          "live"
+        ],
+        "content": "Just got the band and I'm testing with a test sketch i got from chatgpt to get it running during work.\n```c#\n/*\n\n  EMG Single-Channel Reader + Clench Counter\n\n  Board: Arduino UNO/Nano (ATmega328P)\n\n  Signal in: A0\n\n  \n\n  What it does:\n\n  - Calibrates DC offset for 2 s\n\n  - High-pass (subtract mean), full-wave rectify\n\n  - Smooth with moving average to get envelope\n\n  - Prints raw & envelope for Serial Plotter\n\n  - Counts clenches using threshold + hysteresis\n\n*/\n\n  \n\nconst int EMG_PIN = A0;\n\n  \n\n// ---- Sampling ----\n\nconst unsigned long SAMPLE_PERIOD_US = 1000; // 1 kHz target\n\nunsigned long lastSampleUs = 0;\n\n  \n\n// ---- Calibration ----\n\nconst unsigned long CALIBRATION_MS = 2000;\n\nbool calibrated = false;\n\nfloat dcMean = 0.0;\n\nunsigned long calibStartMs;\n\n  \n\n// ---- Envelope (moving average) ----\n\nconst int MA_WINDOW = 25;  // 25 samples @1kHz ≈ 25 ms\n\nfloat maBuffer[MA_WINDOW];\n\nint maIndex = 0;\n\nint maCount = 0;\n\nfloat maSum = 0.0;\n\n  \n\n// ---- Clench detection ----\n\nfloat threshHigh = 25.0; // tune after first plots\n\nfloat threshLow  = 15.0; // hysteresis lower bound\n\nbool inClench = false;\n\nunsigned long clenchCount = 0;\n\n  \n\n// ---- Utilities ----\n\ninline float fastAbs(float x) { return x < 0 ? -x : x; }\n\n  \n\nvoid resetMA() {\n\n  maSum = 0;\n\n  maIndex = 0;\n\n  maCount = 0;\n\n  for (int i = 0; i < MA_WINDOW; i++) maBuffer[i] = 0;\n\n}\n\n  \n\nvoid setup() {\n\n  pinMode(EMG_PIN, INPUT);\n\n  analogReference(DEFAULT); // UNO uses 5V AREF by default\n\n  \n\n  Serial.begin(115200);\n\n  while (!Serial) { ; }\n\n  \n\n  // Warm-up message\n\n  Serial.println(F(\"EMG starting... Keep muscle relaxed for 2 seconds.\"));\n\n  calibStartMs = millis();\n\n  dcMean = 0.0;\n\n  resetMA();\n\n}\n\n  \n\nvoid loop() {\n\n  const unsigned long nowUs = micros();\n\n  if (nowUs - lastSampleUs < SAMPLE_PERIOD_US) return;\n\n  lastSampleUs = nowUs;\n\n  \n\n  // 1) Sample\n\n  int raw = analogRead(EMG_PIN); // 0..1023 on UNO\n\n  \n\n  // 2) Calibration (estimate DC mean while relaxed)\n\n  if (!calibrated) {\n\n    unsigned long elapsed = millis() - calibStartMs;\n\n    // incremental mean to avoid big buffers\n\n    static unsigned long n = 0;\n\n    n++;\n\n    dcMean += (raw - dcMean) / (float)n;\n\n  \n\n    if (elapsed >= CALIBRATION_MS) {\n\n      calibrated = true;\n\n      resetMA();\n\n      Serial.print(F(\"Calibration done. dcMean=\"));\n\n      Serial.println(dcMean, 2);\n\n      Serial.println(F(\"Open Serial Plotter (Ctrl+Shift+L).\"));\n\n      Serial.println(F(\"Columns: raw, env, threshHigh, threshLow\"));\n\n    }\n\n    return;\n\n  }\n\n  \n\n  // 3) High-pass (remove DC mean), rectify\n\n  float centered = raw - dcMean;\n\n  float rectified = fastAbs(centered);\n\n  \n\n  // 4) Moving-average envelope\n\n  maSum -= maBuffer[maIndex];\n\n  maBuffer[maIndex] = rectified;\n\n  maSum += rectified;\n\n  maIndex++;\n\n  if (maIndex >= MA_WINDOW) maIndex = 0;\n\n  if (maCount < MA_WINDOW) maCount++;\n\n  float envelope = maSum / (float)maCount;\n\n  \n\n  // 5) Clench detection with hysteresis\n\n  if (!inClench && envelope > threshHigh) {\n\n    inClench = true;\n\n    clenchCount++;\n\n  } else if (inClench && envelope < threshLow) {\n\n    inClench = false;\n\n  }\n\n  \n\n  // 6) Print for Serial Plotter and debug\n\n  // Format: raw, envelope, threshHigh, threshLow, clenchCount\n\n  Serial.print(raw); Serial.print(',');\n\n  Serial.print(envelope); Serial.print(',');\n\n  Serial.print(threshHigh); Serial.print(',');\n\n  Serial.print(threshLow); Serial.print(',');\n\n  Serial.println(clenchCount);\n\n}\n```\n\nI'm able to get values from different hand movements. Going to try honing down on specific finger movements, thane I'll think about reading what this looks like in different positions on the arm, and then finally recreating the sensor. doesn't look too complicated\n\n\ntesting on here: the **flexor digitorum superficialis**\n![[Pasted image 20250812171256.png]]\n\n\nokay i found official documentaiton for a similar product, gonna try that",
+        "filename": "log-band arrived.md"
+      },
       {
         "date": "2025-07-24T11:52:00.000Z",
         "imgs": [
@@ -238,6 +263,18 @@
         ],
         "content": "test log! smile if you see this!",
         "filename": "log-2025-24-07.md"
+      },
+      {
+        "date": "2025-07-24T11:52:00.000Z",
+        "imgs": [
+          "cover.png"
+        ],
+        "tags": [
+          "hardware",
+          "live"
+        ],
+        "content": "just made first prototype. not very good at electronics so I dont know if what i did is right and I dont know how to verify if it is... im gonna go watch some electronics videos, get a premade semg sensor on aliexpress and then try to remake that once i knwo that works",
+        "filename": "log-2025-30-07.md"
       },
       {
         "date": "2024-10-28T20:45:00.000Z",
