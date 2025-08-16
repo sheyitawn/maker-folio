@@ -15,5 +15,6 @@
     border-radius: 16px;
     /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); */
     overflow: hidden;
+    color: #a0c6e4;
   }
-  
+  .model, .model_model, canvas { background: transparent !important; }
