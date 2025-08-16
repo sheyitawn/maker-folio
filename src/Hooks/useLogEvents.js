@@ -74,6 +74,8 @@ export default function useLogEvents(addLog, logoRef) {
 
     const handleLogoClick = () => {
       clickCount.current += 1;
+      addLog('beep boop'); // dont look!
+
 
       if (clickCount.current === 100) {
         addLog('Secret panel accessed (coming soon...)'); // dont look!
