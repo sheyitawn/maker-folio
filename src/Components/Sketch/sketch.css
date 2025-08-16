@@ -63,6 +63,20 @@
   pointer-events: auto;
 }
 
+.modal-content .model_3d {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: left;
+}
+
+.modal-content .model_3d image {
+  width: 10rem;
+}
+
+
+
 /* .sketch:hover {
   background: transparent;
   font-weight: 900;
@@ -250,6 +264,7 @@
   animation: fadeIn 0.5s forwards; /* Apply fade-in animation */
   margin: 0;
   padding: 0;
+  text-align: left;
   /* pointer-events: none; */
 }
 
@@ -262,7 +277,7 @@
   border-radius: 5px;
   padding: 20px;
   /* max-width: 600px; */
-  text-align: center;
+  text-align: left;
   position: relative;
   margin: .1rem 1.3rem;
 
@@ -466,6 +481,10 @@
   opacity: 1;
 } */
 
+.meta_data {
+  margin-left: 5rem;
+}
+
 .image-icon {
   transition: transform 0.3s ease;
   width: 30vw;
@@ -477,3 +496,31 @@
   transform: scale(1.05);
 }
 
+.media-row {
+  display: flex;
+  /* gap: 1rem; */
+  align-items: center;
+  justify-content: space-between;
+}
+
+.model-col {
+  flex: 3; 
+  /* min-width: 0; */
+  /* width: 20rem; */
+}
+
+.images-col {
+  flex: 1;  
+  display: flex;
+  /* flex-direction: row; */
+  /* display: flex;
+  /* flex-direction: row; 
+  gap: 0.5rem; */
+}
+
+.images-col img {
+  width: 70%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}

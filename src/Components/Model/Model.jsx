@@ -45,7 +45,7 @@ const InteractiveModel = ({ url, holoProps }) => {
   return (
     <group
       ref={group}
-      // scale={clicked ? 1.2 : 1}
+      scale={1.1}
       onClick={() => setClicked((v) => !v)}
     >
       {meshes.map((m, i) => (
@@ -78,13 +78,13 @@ const Model = ({ modelUrl }) => {
     <div className="model">
       <div className="model_model">
         <Canvas
-  gl={{ antialias: true, alpha: true, premultipliedAlpha: true }}
-  onCreated={({ gl }) => {
-    gl.setClearColor(0x000000, 0);           // keep transparent background
-    gl.toneMapping = THREE.NoToneMapping;    // stop ACES/filmic warm shift
-    gl.outputColorSpace = THREE.SRGBColorSpace;
-  }}
->
+          gl={{ antialias: true, alpha: true, premultipliedAlpha: true }}
+          onCreated={({ gl }) => {
+            gl.setClearColor(0x000000, 0);           // keep transparent background
+            gl.toneMapping = THREE.NoToneMapping;    // stop ACES/filmic warm shift
+            gl.outputColorSpace = THREE.SRGBColorSpace;
+          }}
+        >
 
           <ambientLight intensity={Math.PI / 2} />
           <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI/3} />

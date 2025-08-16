@@ -13,20 +13,19 @@ const Logs = ({ projectId }) => {
         setLogs(data[projectId]?.logs || []);
       });
 
-    console.log("id: ", projectId)
-    console.log("logs: ", logs)
+    // console.log("id: ", projectId)
+    // console.log("logs: ", logs)
   }, [projectId]);
 
   if (!logs.length) return <p>No logs yet.</p>;
 
   return (
     <div className="logs-container">
-      id: {projectId}
+      {/* id: {projectId} */}
 
       {logs.map((log, i) => (
         <div key={i} className="log-entry">
-          <h3>title: {log.filename}</h3>
-          <h4>{new Date(log.date).toLocaleDateString()}</h4>
+          <h3>{log.filename} | {new Date(log.date).toLocaleDateString()}</h3>
           <ReactMarkdown>{log.content}</ReactMarkdown>
           {log.images?.map((img, idx) => (
             <img
