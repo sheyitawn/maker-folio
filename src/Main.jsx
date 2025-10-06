@@ -5,6 +5,8 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import useLogEvents from './Hooks/useLogEvents.js';
 import "./App.css";
 import StaggeredGrid from './Components/StaggeredGrid/StaggeredGrid.jsx';
+import { FaGithub } from 'react-icons/fa';
+
 
 const Main = (entered, loading, setLoading) => {
 
@@ -81,8 +83,20 @@ const Main = (entered, loading, setLoading) => {
       <div className="content_footnote">
         <div className="content_footnote_header">Seyitan Adeleke pronounced sheyitawn</div>
         <div className="content_footnote_center">// DEV NOTES</div>
-        <div className="content_footnote_footer">links</div>
+
+        <div className="content_footnote_footer">
+          <a href="mailto:sheyitawn@gmail.com" className="footer-link">
+            send me a message
+          </a>
+          {'  |  '}
+          <a href="https://github.com/sheyitawn" target="_blank" rel="noopener noreferrer" className="footer-link">
+            <FaGithub />
+          </a>
+          {/* {'  |  '} */}
+
+        </div>
       </div>
+
 
       <LiveLogFeed logs={logs} />
     </div>

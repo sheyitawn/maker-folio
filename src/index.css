@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+a,
+a:visited,
+a:active {
+  all: unset;            /* removes ALL CSS properties */
+  cursor: pointer;       /* restores pointer cursor */
+}
+
+
+a:hover{
+  font-weight: 800;
+}

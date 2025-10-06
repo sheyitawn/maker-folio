@@ -180,3 +180,10 @@
 .content_footnote .content_footnote_center{
   color: #4f5374;
 }
+
+.content_footnote_footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+}
