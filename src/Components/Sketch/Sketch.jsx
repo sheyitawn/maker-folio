@@ -1,9 +1,10 @@
+// Sketch.jsx
 import React, { useState, Suspense } from 'react';
 import "./sketch.css";
 import Model from "../Model/Model";
 import Logs from "../Logs/Logs";
 
-// -------- Error Boundary: catches render-time errors from children --------
+// -------- Error Boundary --------
 class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props);
@@ -11,10 +12,6 @@ class ErrorBoundary extends React.Component {
   }
   static getDerivedStateFromError(error) {
     return { hasError: true, error };
-  }
-  componentDidCatch(error, info) {
-    // Optional: report to analytics/logging here
-    // console.error('Model failed:', error, info);
   }
   render() {
     if (this.state.hasError) {
@@ -24,7 +21,6 @@ class ErrorBoundary extends React.Component {
   }
 }
 
-// -------- Simple "Coming Soon" fallback --------
 const ComingSoon = ({ reason }) => (
   <div className="coming-soon">
     <div className="coming-soon__badge">Coming Soon</div>
@@ -33,7 +29,18 @@ const ComingSoon = ({ reason }) => (
   </div>
 );
 
-const Sketch = ({ projectId, title, description, sketch, sub_sketch, model, type, onLog }) => {
+
+const Sketch = ({
+  projectId,
+  title,
+  description,
+  sketch,
+  sub_sketch,
+  model,
+  type,
+  progress,
+  onLog
+}) => {
   const [isClosing, setIsClosing] = useState(false);
   const [isModalOpen, setModalOpen] = useState(false);
 
@@ -42,34 +49,47 @@ const Sketch = ({ projectId, title, description, sketch, sub_sketch, model, type
     onLog?.(`Opened project: ${title}`);
     setIsClosing(false);
   };
-
   const closeModal = () => {
     setIsClosing(true);
     setTimeout(() => {
       setModalOpen(false);
       onLog?.(`Closed project: ${title}`);
-    }, 500); // Match animation duration
+    }, 500);
   };
 
   const combinedTitle = `${type} • ${title}`;
-
-  // Helper to decide if we have a usable model URL
   const hasModel = typeof model === 'string' && model.trim().length > 0;
+
+  const isDoing = String(progress || '').toLowerCase() === 'doing';
+
+  const bannerImage = '/assets/under-construction.png';
 
   return (
     <>
+      {/* CARD */}
       <div className="sketch hover-target--grow distort-hover" onClick={openModal}>
         <svg>
           <rect x="0" y="0" fill="none" width="100%" height="100%" />
         </svg>
 
+        {isDoing && (
+          <img
+            src={bannerImage}
+            alt="Under construction"
+            className="construction-banner-img"
+            loading="lazy"
+            decoding="async"
+          />
+        )}
+
         <img src={sketch} alt="Preview" className="image-icon" />
         <img src={sub_sketch} className="sketch-mini" alt="mini sketch" />
         <div className="sketch_title" data-title={combinedTitle}>
-          {combinedTitle}
+          {combinedTitle} 
         </div>
       </div>
 
+      {/* MODAL */}
       {isModalOpen && (
         <div className="modal" onClick={closeModal}>
           <div className="scanlines" />
@@ -81,9 +101,7 @@ const Sketch = ({ projectId, title, description, sketch, sub_sketch, model, type
               ✕
             </button>
 
-
             <section className="media-row">
-              {/* Model on the left */}
               <div className="model-col">
                 {!hasModel ? (
                   <ComingSoon reason="No model URL provided." />
@@ -96,23 +114,18 @@ const Sketch = ({ projectId, title, description, sketch, sub_sketch, model, type
                 )}
               </div>
 
-              {/* Two images side by side */}
               <div className="images-col">
                 <img src={sketch} alt={`${title} sketch`} />
                 <img src={sub_sketch} alt={`${title} sub sketch`} />
               </div>
             </section>
-            
+
             <div className='meta_data'>
               <p>{type}</p>
               <h1>{title}</h1>
               <p>{description}</p>
               <Logs projectId={projectId} />
             </div>
-            
-
-
-            {/* reserved for custom content */}
           </div>
         </div>
       )}
