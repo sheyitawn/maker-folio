@@ -187,3 +187,13 @@
   justify-content: space-evenly;
 
 }
+
+.footer-link {
+  padding: 0;
+  margin: 0;
+  font-family: 'Courier', monospace;
+  text-transform: none;
+  border: none;
+  letter-spacing: normal;
+  color: #fff;
+}

@@ -5,7 +5,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import useLogEvents from './Hooks/useLogEvents.js';
 import "./App.css";
 import StaggeredGrid from './Components/StaggeredGrid/StaggeredGrid.jsx';
-import { FaGithub } from 'react-icons/fa';
+import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 
 
 const Main = (entered, loading, setLoading) => {
@@ -88,15 +88,17 @@ const Main = (entered, loading, setLoading) => {
         <div className="content_footnote_center">// DEV NOTES</div>
 
         <div className="content_footnote_footer">
-          <a href="mailto:sheyitawn@gmail.com" className="footer-link">
+          <a href="mailto:sheyitawn@gmail.com" className="hover-target--fill distort-hover footer-link glitch_button" >
             send me a message
           </a>
-          {'  |  '}
-          <a href="https://github.com/sheyitawn" target="_blank" rel="noopener noreferrer" className="footer-link">
+          <div>|</div>
+          <a href="https://github.com/sheyitawn" className="hover-target--fill distort-hover footer-link glitch_button" target="_blank" rel="noopener noreferrer">
             <FaGithub />
           </a>
-          {/* {'  |  '} */}
-
+          <div>|</div>
+          <a href="https://www.linkedin.com/in/seyitan-adeleke-84a7721b4" className="hover-target--fill distort-hover footer-link glitch_button" target="_blank" rel="noopener noreferrer">
+            <FaLinkedinIn  />
+          </a>
         </div>
       </div>
 
