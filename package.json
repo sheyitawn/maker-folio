@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "update-projects": "node src/scripts/generateProjectData.js",
-    "move-content": "powershell -Command \"Copy-Item -Recurse -Force 'C:/Users/asus/Documents/Work/Personal-Vault/WORK/maker-folio/logs/*' 'public/content'\"",
+    "move-content": "powershell -NoProfile -Command \"robocopy 'C:\\Users\\asus\\Documents\\Work\\Personal-Vault\\WORK\\maker-folio\\logs' 'public\\content' /MIR /R:1 /W:1 /XD .obsidian .trash /XF Thumbs.db desktop.ini\"",
     "start": "react-scripts start",
     "build": "npm run move-content && npm run update-projects && react-scripts build",
+    "refresh": "npm run move-content && npm run update-projects",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -47,6 +48,7 @@
     "react-router-dom": "^7.8.0",
     "react-scripts": "^5.0.1",
     "react-transition-group": "^4.4.5",
+    "remark-gfm": "^4.0.1",
     "three": "^0.170.0",
     "web-vitals": "^2.1.4"
   }
