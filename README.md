@@ -3,9 +3,9 @@
 An interactive portfolio experience built with React and Three.js.  
 This site showcases all my projects with (semi-)detailed descriptions of how they were made.
 
-![alt text](image-1.png)
-![alt text](image-2.png)
-![alt text](image-3.png)
+![landing](image-1.png)
+![loading](image-2.png)
+![main page](image-3.png)
 ## Getting Started
 
 ```bash
