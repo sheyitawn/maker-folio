@@ -13,7 +13,7 @@ html {
       rgba(0, 0, 0, 0.4) 100%
     );
     color: white;
-    overflow-y: hidden;
+    overflow: hidden;
     cursor: none;
   }
   
@@ -104,7 +104,7 @@ html {
 
 .glitch_button:before,
 .glitch_button:after {
-  content: 'ENTER';
+  content: 'SHEYITAWN';
   position: absolute;
   top: 0;
   left: 0;

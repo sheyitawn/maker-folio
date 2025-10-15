@@ -101,31 +101,34 @@ const Sketch = ({
               ✕
             </button>
 
-            <section className="media-row">
-              <div className="model-col">
-                {!hasModel ? (
-                  <ComingSoon reason="No model URL provided." />
-                ) : (
-                  <ErrorBoundary fallback={<ComingSoon reason="Model failed to load." />}>
-                    <Suspense fallback={<div className="coming-soon">Loading 3D preview…</div>}>
-                      <Model modelUrl={model} />
-                    </Suspense>
-                  </ErrorBoundary>
-                )}
-              </div>
+            <div className="modal-body">
+              <section className="media-row">
+                <div className="model-col">
+                  {!hasModel ? (
+                    <ComingSoon reason="No model URL provided." />
+                  ) : (
+                    <ErrorBoundary fallback={<ComingSoon reason="Model failed to load." />}>
+                      <Suspense fallback={<div className="coming-soon">Loading 3D preview…</div>}>
+                        <Model modelUrl={model} />
+                      </Suspense>
+                    </ErrorBoundary>
+                  )}
+                </div>
 
-              <div className="images-col">
-                <img src={sketch} alt={`${title} sketch`} />
-                <img src={sub_sketch} alt={`${title} sub sketch`} />
-              </div>
-            </section>
+                <div className="images-col">
+                  <img src={sketch} alt={`${title} sketch`} />
+                  <img src={sub_sketch} alt={`${title} sub sketch`} />
+                </div>
+              </section>
 
-            <div className='meta_data'>
-              <p>{type}</p>
-              <h1>{title}</h1>
-              <p>{description}</p>
-              <Logs projectId={projectId} />
-            </div>
+              <div className='meta_data'>
+                <p>{type}</p>
+                <h1>{title}</h1>
+                <p>{description}</p>
+                <Logs projectId={projectId} />
+              </div>
+          </div>
+
           </div>
         </div>
       )}

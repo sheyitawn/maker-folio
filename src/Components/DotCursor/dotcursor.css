@@ -8,6 +8,7 @@
   transform: translate(-50%, -50%) scale(1);
   transition: transform 0.25s ease, width 0.25s ease, height 0.25s ease;
   mix-blend-mode: difference;
+  will-change: transform, width, height; /* perf */
 }
 
 .dot-cursor--grow {
@@ -20,7 +21,16 @@
   transform: translate(-50%, -50%) scale(1);
 }
 
+/* NEW: CSS fallback—hide on touch/coarse pointers just in case */
+@media (hover: none), (pointer: coarse) {
+  .dot-cursor {
+    display: none !important;
+  }
+}
 
-
-
-
+/* Optional: hide on narrow screens too */
+@media (max-width: 767px) {
+  .dot-cursor {
+    display: none !important;
+  }
+}

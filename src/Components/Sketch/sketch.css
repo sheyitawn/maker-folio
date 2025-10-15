@@ -269,12 +269,14 @@
   padding: 0;
   text-align: left;
   /* pointer-events: none; */
+  overflow: hidden;
+
 }
 
 /* Modal content styling */
 .modal-content {
   border: 2px solid white;
-  width: 100%;
+  width: 90%;
   height: 86vh;
   background: #13173A;
   border-radius: 5px;
@@ -284,8 +286,9 @@
   position: relative;
   margin: .1rem 1.3rem;
 
-
-  overflow-y: scroll;
+  position: relative;
+  /* overflow-y: scroll; */
+  overflow: hidden;
 
   background-image: 
     linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
@@ -354,6 +357,18 @@
   font-size: 20px;
   color: #fff;
   cursor: none;
+}
+
+.modal-body {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  /* fit inside the modal minus any header/top padding you use */
+  max-height: calc(86vh - 40px);
+  /* keeps layout stable when scrollbar appears */
+  scrollbar-gutter: stable both-edges;
+  /* optional padding so content doesn't sit under the left ruler */
+  padding-left: 12px;               /* slightly > 8px ruler width */
+  padding-top: 12px;                /* slightly > 8px top ruler height */
 }
 
 /* Custom content styling */
