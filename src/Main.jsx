@@ -45,6 +45,7 @@ const Main = (entered, loading, setLoading) => {
       });
 
       setProjects(entries);
+      // setProjects(entries.reverse());
     };
 
     fetchProjects();

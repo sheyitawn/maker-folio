@@ -6,4 +6,6 @@ tags:
   - hardware
   - bug
 ---
+No they're not. Anyways 
+
 The life dashboard is getting an upgrade. Were tracking everything 
