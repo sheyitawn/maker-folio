@@ -49,6 +49,8 @@ const Main = (entered, loading, setLoading) => {
 
     fetchProjects();
   }, []);
+  // console.log("🚀 ~ Main ~ projects:", projects)
+
 
   return (
      <TransitionGroup component={null}>
@@ -74,6 +76,7 @@ const Main = (entered, loading, setLoading) => {
               sketch={sketch.sketch}
               sub_sketch={sketch.sub_sketch}
               projectlog={sketch.logs}
+              progress={sketch.metadata.progress} 
               onLog={addLog}
             />
           ))}

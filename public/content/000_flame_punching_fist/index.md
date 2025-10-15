@@ -7,7 +7,4 @@ tags:
   - hardware
 description: A fist that shoots flames when you punch
 ---
-This is the test description for the flame punching fist. so cool, so nice
-
-
-C:\Users\asus\Documents\Work\Personal-Vault\WORK\maker-folio\logs
+A pair of fists that shoot out fire when you punch. Inspired by [[Allen Pan's]] pair, these are more make at home friendly (if you have a 3d printer)

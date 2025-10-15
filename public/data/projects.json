@@ -19,7 +19,7 @@
           "live",
           "new"
         ],
-        "content": "another log!",
+        "content": "I made a video describing how I made these. \n\n[[Link to video]]\n\nDidn't really go into the nitty gritty, so all the technical stuff is here.\n\n**Parts**\n- Electric sprayer\n- Arc lighter\n- relays x 2\n- MCU\n- imu (I used MPU6050)\n- limit switch, or any button tbh\n- potentiometer \n\nMaterials\n- 3D printer\n- drill\n- glue gun\n\n**Code**\nThe code for these is really pretty simple. The whole system is split into two: the arc lighter and the electric sprayer. I separated the two to make sure that you have to have the arc lighter manually activated before you can shoot. This was for safety, to prevent accidental lighting in case something went wrong in the code. \n\nHow it works is that the button on the arc lighter is connected to the relay on the Arduino, and it only goes on when a limit switch is pressed. \n\nAlong with that, we are also checking for a change in acceleration with the IMU. If it looks like a punch (discovered through lots of test punching), then it checks that the limit switch is also being pressed. If it is, it activates the electric sprayer (also connected by relay), which contains some kind of flammable liquid.\n\nI think this is the part where I'm supposed to say don't try this at home except you're trained in fire safety (or myself)\n\nThen bada bing bada boom you can now shoot out fire when you punch and hold\n\nI found that for actually burning things, it's pretty tricky to do so with just a punch, you know with specific heat capacity and such (the only thing I remember from IGCSE physics) so I added a potentiometer that acts as a dial. Between some arbitrary ranges, (I recommend marking these) there are two different functions. The first being punch mode, which is just the regular punch and shoot mechanic. The second mode is the stream mode, where you can punch to shoot, and if you hold down the limit switch, it keeps firing the sprayer. The potentiometer again was for safety, and because I wanted to also keep the punch mode because 'that's the whole thing!'",
         "filename": "log-2025-24-06.md"
       },
       {
@@ -31,7 +31,7 @@
           "hardware",
           "live"
         ],
-        "content": "test log! smile if you see this!",
+        "content": "I designed an enclosure for the electronics inside. It was **heavily** inspired by this design I found on thingiverse [[link to that]]\n\n\n\n\n\n![[cover.png|Backyard flame test, rev A|300]]",
         "filename": "log-2025-24-07.md"
       }
     ]
@@ -39,7 +39,7 @@
   "001_adventure_time_voice_box": {
     "title": "Adventure Time Voice Box",
     "type": "PROP",
-    "model3D": null,
+    "progress": "done",
     "tags": [
       "gadget",
       "hardware"
@@ -55,8 +55,19 @@
           "hardware",
           "live"
         ],
-        "content": "test log! smile if you see this!",
+        "content": "This was supposed to be a really quick project, since I had about a week to get it made in time for Halloween.\n\nIn the show, the voice box translates her speech ( I think it's korean) to English (Google doesn't exist in the land of oooh), and the reason it's funny is there isn't a voice to fit her: it's just old man, robot or alien. \n\nThe plan was to use a dial to change between a the different voices and play some funny sound bytes through a speaker (I wasn't planning on actually translating, I had a week max to work on this)\n\n**Parts**\n- Potentiometer \n- MCU\n- Speaker module(check name)\n- SD card\n\n**Materials**\n- Clay but a 3d printer is definitely a better idea\n\nI first had to decide how big to make this thing. Small enough to fit on my neck, but big enough to fit all the electronics.\n\nI made the enclosure out of clay (because I had it, don't recommend as it took too long but it was kind of fun) and let it harden in the oven.\n\nThen the electronics. Half of the battle was getting the audio to play, and after some tweaking, it was working pretty smoothly. It was really tricky to get the potentiometer functionality working the way I wanted, and to this day I still don't think it works fully, just because of the way Arduino works and the looping, its a little weird. If you care enough you can modify it to work better.\n\nIn the show, she doesn't really say much with each of the voices. I think she says about one sentence each, except the old man, which is what she ends up speaking as. But I wanted to be able to use my own custom voice lines. \n\nI found a custom text to speech where I could feed it a voice sample and I could make it say whatever I wanted. It ended up being really good, and I run a bunch of custom voice lines through it. This part was the most fun because I could make them say anything and you'd be surprised how funny it is to hear lady rainicorn say some pretty questionable things. I saved all these to the SD card and was able to discern them based on their names in the code.\n\nAfter some tweaks to the code (does this count as integration hell) It finally was working. Only thing left was power, which I ignored till the last day because \"I was going to just plug it into a powerbank\".\n\nLittle did I know, when dressing up to go out on Halloween night, after putting on the voice box, powering it up and turning it on, all the lights went on, but no sound. Connected it to my computer, sound came back. Back to the power bank, no sound. I had no time to start troubleshooting (even though I did try) \n\nSo It ended up being a useless prop for the night. How disappointing",
         "filename": "log-2025-24-07.md"
+      },
+      {
+        "date": "2024-10-28T20:45:00.000Z",
+        "imgs": [
+          "cover.png"
+        ],
+        "tags": [
+          "hardware"
+        ],
+        "content": "It's not Halloween anymore, but now that I have a 3d printer, I want to remake it and make it 3d printed.\n\nI designed the body in Fusion 360 to similar dimensions, but made it a bit smaller to fit my neck better (I noticed from pictures on the night it was pretty fat on my neck)",
+        "filename": "log-im remaking it but 3d printed.md"
       },
       {
         "date": "2024-10-28T20:45:00.000Z",
@@ -67,7 +78,7 @@
           "hardware",
           "bug"
         ],
-        "content": "another log! for some reason, when i connect the power bank, it just stops working with the voice module. everything else seems fine though...",
+        "content": "for some reason, when i connect the power bank, it just stops working with the voice module. everything else seems fine though...\n\nGoing to try to fix this",
         "filename": "log-it's not getting powered by power bank.md"
       }
     ]
@@ -75,12 +86,12 @@
   "002_chaotic_twister": {
     "title": "Chaotic Twister",
     "type": "PROP",
-    "progress": null,
+    "progress": "done",
     "tags": [
       "hardware",
       "video"
     ],
-    "description": "A fist that shoots flames when you punch",
+    "description": "A completely regular game of twister, with a twist...",
     "logs": [
       {
         "date": null,
@@ -92,27 +103,15 @@
           "live",
           "new"
         ],
-        "content": "another log!",
+        "content": "I made this because I wanted to make a funny video about it, and I did, back in 2020, but noone trusted me to shock them so I never published it. Now I'm surrounded by uni students that could care less about their health and will try anything. So I decided to revive the project and give it a makeover.\n\nThe only thing I kept from the original was the mat sensors.\n\nThe initial software used python and Arduino so I swapped the python with react so I could get a cleaner interface.\n\n(About the sensors)\n\n(Multiplexing)\n\n(Software)\n\n(Controllers)\n\n(Tens unit)\n\n(Integration station)\n\n(Video)",
         "filename": "log-2025-24-06.md"
-      },
-      {
-        "date": null,
-        "imgs": [
-          "cover.png"
-        ],
-        "tags": [
-          "hardware",
-          "live"
-        ],
-        "content": "test log! smile if you see this!",
-        "filename": "log-2025-24-07.md"
       }
     ]
   },
   "003_nfc_ring": {
     "title": "NFC Ring",
     "type": "TOOL",
-    "progress": null,
+    "progress": "done",
     "tags": [
       "gadget",
       "hardware"
@@ -128,7 +127,7 @@
           "hardware",
           "live"
         ],
-        "content": "test log! smile if you see this!",
+        "content": "I went through the whole process of making this and being surprised that it didn't exist already, and then I actually googled it and it turns out there's a tutorial on how to make these... After all my trial and error too. And usually I'm up for that but all the super glue fumes we're getting to me...\n\n\nAnyways to actually make the rings you need:\n\n**Materials**\n- wood veneer\n- lots of super glue\n- a dremel\n\n**Parts**\n\n\n(Tutorial of how to do it)",
         "filename": "log-2025-24-07.md"
       },
       {
@@ -140,15 +139,15 @@
           "hardware",
           "bug"
         ],
-        "content": "another log! for some reason, when i connect the power bank, it just stops working with the voice module. everything else seems fine though...",
-        "filename": "log-it's not getting powered by power bank.md"
+        "content": "These were made with the intention to sell on Etsy or whatever. But turns out I can't be self employed on a student visa. Legally I did not try wink wink. So now I just have a bunch of these",
+        "filename": "log-i can't be self employed.md"
       }
     ]
   },
   "004_digital_id": {
     "title": "Digital ID card",
     "type": "PROP",
-    "progress": null,
+    "progress": "doing",
     "tags": [
       "gadget",
       "hardware"
@@ -164,20 +163,8 @@
           "hardware",
           "live"
         ],
-        "content": "Just did a V2 design of the screen to make all the important stuff bigger and added more meaningful data. thoning of adding a camera so that if im at a convention, i can take photos of people and add them to a digital rolodex. Not sure how ill track their name, unless i ask. will probably need to ask for the picture in the first place...",
-        "filename": "log-2025-10-08.md"
-      },
-      {
-        "date": "2025-07-24T11:52:00.000Z",
-        "imgs": [
-          "cover.png"
-        ],
-        "tags": [
-          "hardware",
-          "live"
-        ],
-        "content": "test log! smile if you see this!",
-        "filename": "log-2025-24-07.md"
+        "content": "Just did a V0.2 design of the screen to make all the important stuff bigger and added more meaningful data. thoning of adding a camera so that if im at a convention, i can take photos of people and add them to a digital rolodex. Not sure how ill track their name, unless i ask. will probably need to ask for the picture in the first place...",
+        "filename": "log-a camera might be overkill.md"
       },
       {
         "date": "2024-10-28T20:45:00.000Z",
@@ -188,15 +175,15 @@
           "hardware",
           "bug"
         ],
-        "content": "another log! for some reason, when i connect the power bank, it just stops working with the voice module. everything else seems fine though...",
-        "filename": "log-it's not getting powered by power bank.md"
+        "content": "aaaaaaaand it's broken. After I printed the case, it broke while fitting. I only noticed it was broken after I plugged it in and saw a giant crack through the screen. And no it doesn't still work, I really tried, especially since it was a £30 screen 🫠\n\n\nAbout the actual version updates\nDowngrading back to a TFT screen. I think it will work a lot better with the direction the project is moving. Plus I think it looks better. I have alot more room to play with design-wise and there's also a bunch of ideas I have for it that I think will only work with a non-eink screen.\n\n\nI redesigned the case to be alot cleaner and to fit the new screen (maybe a bit too much). Screen cracking aside I really like the new design, and even though it's a bit more basic, i think it's a good step in the right direction. And the NFC chip fits nicely as well, and works beautifully and I want to kiss whoever made that chip because it's been disgustingly easy to use and it just works well. Anyways\n\nI found a supplier selling them for cheaper, so I'll be buying those when I get the money.",
+        "filename": "log-version 0.3 is here!.md"
       }
     ]
   },
   "005_gesture_controller": {
     "title": "Gesture controller for Drone",
     "type": "PROP",
-    "progress": null,
+    "progress": "done",
     "tags": [
       "gadget",
       "hardware"
@@ -232,7 +219,7 @@
   "006_sEMG_band": {
     "title": "sEmg band",
     "type": "GADGET",
-    "progress": null,
+    "progress": "doing",
     "tags": [
       "gadget",
       "hardware",
@@ -261,32 +248,8 @@
           "hardware",
           "live"
         ],
-        "content": "test log! smile if you see this!",
-        "filename": "log-2025-24-07.md"
-      },
-      {
-        "date": "2025-07-24T11:52:00.000Z",
-        "imgs": [
-          "cover.png"
-        ],
-        "tags": [
-          "hardware",
-          "live"
-        ],
         "content": "just made first prototype. not very good at electronics so I dont know if what i did is right and I dont know how to verify if it is... im gonna go watch some electronics videos, get a premade semg sensor on aliexpress and then try to remake that once i knwo that works",
         "filename": "log-2025-30-07.md"
-      },
-      {
-        "date": "2024-10-28T20:45:00.000Z",
-        "imgs": [
-          "cover.png"
-        ],
-        "tags": [
-          "hardware",
-          "bug"
-        ],
-        "content": "another log! for some reason, when i connect the power bank, it just stops working with the voice module. everything else seems fine though...",
-        "filename": "log-it's not getting powered by power bank.md"
       }
     ]
   },

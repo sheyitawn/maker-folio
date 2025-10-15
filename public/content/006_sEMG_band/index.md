@@ -1,7 +1,7 @@
 ---
 title: sEmg band
 type: GADGET
-progress: 
+progress: doing
 tags:
   - gadget
   - hardware

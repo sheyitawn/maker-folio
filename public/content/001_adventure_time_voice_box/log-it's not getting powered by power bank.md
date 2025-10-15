@@ -6,4 +6,6 @@ tags:
   - hardware
   - bug
 ---
-another log! for some reason, when i connect the power bank, it just stops working with the voice module. everything else seems fine though...
+for some reason, when i connect the power bank, it just stops working with the voice module. everything else seems fine though...
+
+Going to try to fix this

@@ -1,0 +1,9 @@
+---
+date: 2025-07-24T11:52:00
+imgs:
+  - cover.png
+tags:
+  - hardware
+  - live
+---
+Just did a V0.2 design of the screen to make all the important stuff bigger and added more meaningful data. thoning of adding a camera so that if im at a convention, i can take photos of people and add them to a digital rolodex. Not sure how ill track their name, unless i ask. will probably need to ask for the picture in the first place...

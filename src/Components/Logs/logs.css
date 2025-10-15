@@ -2,5 +2,25 @@
     border: 2px solid #fff;
     padding: 2rem;
     margin: 2rem 2rem 2rem 0;
-    /* border-radius: 5px; */
+    border-radius: 5px;
+}
+
+.md-figure {
+  margin: 1rem 0;
+  display: grid;
+  gap: 0.5rem;
+  justify-items: start;
+}
+
+.md-figure img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+.md-figure figcaption {
+  font-size: 0.9rem;
+  line-height: 1.3;
+  opacity: 0.8;
 }

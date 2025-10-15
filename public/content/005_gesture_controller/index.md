@@ -1,7 +1,7 @@
 ---
 title: Gesture controller for Drone
 type: PROP
-progress: 
+progress: done
 tags:
   - gadget
   - hardware
