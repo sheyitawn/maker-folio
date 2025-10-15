@@ -12,7 +12,14 @@ This site showcases all my projects with detailed descriptions of how they were 
 git clone https://github.com/sheyitawn/maker-folio.git
 cd maker-folio
 npm install
+
+
+npm run move-content
 npm run update-projects
+or 
+npm run refresh
+
+
 npm start
 ```
 
