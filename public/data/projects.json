@@ -250,6 +250,18 @@
         ],
         "content": "just made first prototype. not very good at electronics so I dont know if what i did is right and I dont know how to verify if it is... im gonna go watch some electronics videos, get a premade semg sensor on aliexpress and then try to remake that once i knwo that works",
         "filename": "log-2025-30-07.md"
+      },
+      {
+        "date": "2024-10-28T20:45:00.000Z",
+        "imgs": [
+          "cover.png"
+        ],
+        "tags": [
+          "hardware",
+          "bug"
+        ],
+        "content": "I hoped to get an MVP in the next couple of months, and in my head I was racing Meta to see if I could finish creating(and training) my wristband before they released theirs. Turns out they just announced the price for the glasses and band.\n\nCool cool\n\nMy best bet not is to try and train my model better than a multi billion dollar corporation. \n\nRight right\n\nA girl can dream",
+        "filename": "log-meta.md"
       }
     ]
   },
@@ -289,14 +301,14 @@
     ]
   },
   "008_sEmg_controlled_arm": {
-    "title": "Adventure Time Voice Box",
+    "title": "sEmg controlled 25 DOF hand",
     "type": "PROP",
     "progress": null,
     "tags": [
       "gadget",
       "hardware"
     ],
-    "description": "A working voice box prop based on lady rainicorn's voice changer.",
+    "description": "A fully articulated robotic hand controlled with sEMG",
     "logs": [
       {
         "date": "2025-07-24T11:52:00.000Z",
@@ -335,19 +347,7 @@
     "description": "A dashboard that shows me an overview of my life, and tracks some of it",
     "logs": [
       {
-        "date": "2025-07-24T11:52:00.000Z",
-        "imgs": [
-          "cover.png"
-        ],
-        "tags": [
-          "hardware",
-          "live"
-        ],
-        "content": "test log! smile if you see this!",
-        "filename": "log-2025-24-07.md"
-      },
-      {
-        "date": "2024-10-28T20:45:00.000Z",
+        "date": "2025-07-02T11:49:00.000Z",
         "imgs": [
           "cover.png"
         ],
@@ -355,8 +355,20 @@
           "hardware",
           "bug"
         ],
-        "content": "another log! for some reason, when i connect the power bank, it just stops working with the voice module. everything else seems fine though...",
-        "filename": "log-it's not getting powered by power bank.md"
+        "content": "No they're not. Anyways \n\nThe life dashboard is getting an upgrade. Were tracking everything",
+        "filename": "log-theyre putting trackers in our heads.md"
+      },
+      {
+        "date": "2025-01-24T16:41:00.000Z",
+        "imgs": [
+          "cover.png"
+        ],
+        "tags": [
+          "hardware",
+          "live"
+        ],
+        "content": "This was supposed to be an overview of everything. I first had to define what the most important things I wanted to track were, based on my year goals:\n\n- Projects\n- Relationships\n- Health\n\nThen I came up with a bunch of \"widgets\" that could track different things. I want to make it an overview that I wouldn't have to interact with, because I planned to run this on a screen in my room on a raspberry pi.\n\nSome of these widgets:\n- good morning\n- (other widgets)\n\nI designed the initial UI using Figma\n\n(Image of that)\n\nThen I used React to create the site. I planned to run it locally, using a master .JSON as the database.\n\n(Screenie)\n\n\nThis is what that looked like\n\n(Not sure if I even gave an image for this)",
+        "filename": "log-initial plan.md"
       }
     ]
   }

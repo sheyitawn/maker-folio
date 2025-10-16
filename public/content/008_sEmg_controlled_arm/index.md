@@ -1,11 +1,11 @@
 ---
-title: Adventure Time Voice Box
+title: sEmg controlled 25 DOF hand
 type: PROP
-progress: 
+progress:
 tags:
   - gadget
   - hardware
-description: A working voice box prop based on lady rainicorn's voice changer.
+description: A fully articulated robotic hand controlled with sEMG
 ---
 This is the test description for the lady rainicorn voice box. so cool, so nice
 
