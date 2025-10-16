@@ -107,7 +107,7 @@ const Sketch = ({
                   {!hasModel ? (
                     <ComingSoon reason="No model URL provided." />
                   ) : (
-                    <ErrorBoundary fallback={<ComingSoon reason="Model failed to load." />}>
+                    <ErrorBoundary fallback={<ComingSoon reason="" />}>
                       <Suspense fallback={<div className="coming-soon">Loading 3D preview…</div>}>
                         <Model modelUrl={model} />
                       </Suspense>
